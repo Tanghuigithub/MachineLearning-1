@@ -8,5 +8,5 @@
    * [矩阵](matrix.md)
    * [概率](probability.md)
    * [待整理](inbox0.md)
-* 基础知识
+* [基础知识](basic.md)
 
