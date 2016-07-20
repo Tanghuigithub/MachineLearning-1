@@ -9,4 +9,5 @@
    * [概率](probability.md)
    * [待整理](inbox0.md)
 * [第1章 基础知识](basic.md)
+   * 支持向量机
 
