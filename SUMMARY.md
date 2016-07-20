@@ -5,5 +5,5 @@
    * [函数](han_shu.md)
    * [微分](differential.md)
    * [积分](integral.md)
-   * 矩阵
+   * [矩阵](matrix.md)
 
