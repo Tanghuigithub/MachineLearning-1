@@ -7,4 +7,5 @@
    * [积分](integral.md)
    * [矩阵](matrix.md)
    * [概率](probability.md)
+   * 待整理
 
