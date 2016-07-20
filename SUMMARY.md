@@ -2,5 +2,5 @@
 
 * [Introduction](README.md)
 * [第0章 数学准备](chapter1.md)
-   * 函数
+   * [函数](han_shu.md)
 
