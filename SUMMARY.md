@@ -7,6 +7,7 @@
    * [积分](integral.md)
    * [矩阵](matrix.md)
    * [概率](probability.md)
+* [待整理](inbox0.md)
 * [神经网络入门](nnintro.md)
 * [第1章 基础知识](basic.md)
    * [待整理](inbox0.md)
