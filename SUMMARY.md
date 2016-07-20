@@ -11,6 +11,7 @@
 * [第1章 基础知识](basic.md)
    * [支持向量机](svm.md)
    * [距离](distance.md)
+   * SMO
 * [第2章 神经网络入门](nnintro.md)
    * [神经网络结构](nnstructure.md)
 * [第3章 神经网络编程](nnpractice.md)
