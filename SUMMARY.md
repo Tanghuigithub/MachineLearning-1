@@ -12,5 +12,5 @@
    * [支持向量机](svm.md)
 * [第2章 神经网络入门](nnintro.md)
 * [第3章 神经网络编程](nnpractice.md)
-* 第4章 深度学习探索
+* [第4章 深度学习探索](deeplearning.md)
 
