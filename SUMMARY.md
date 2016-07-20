@@ -10,6 +10,7 @@
    * [概率](probability.md)
 * [第1章 基础知识](basic.md)
    * [支持向量机](svm.md)
+   * 距离
 * [第2章 神经网络入门](nnintro.md)
 * [第3章 神经网络编程](nnpractice.md)
 * [第4章 深度学习探索](deeplearning.md)
