@@ -1,6 +1,5 @@
-# 函数
+# 函数家族
 
-6.3 Parametrizing a Learned Predictor
 -------------
 
  - **motivation**: to compose *simple transformations* in order to obtain 
@@ -49,18 +48,19 @@ $$
 
  - Replacing the squared error by an absolute value makes the neural network try to estimate not the conditional expectation but the conditional median
  
- - **cross entropy objective function**: when y is a discrete label, i.e., for classification problems, other loss functions such as the Bernoulli negative log-likelihood4 have been found to be more appropriate than the squared error. ($y∈{ \left\{ 0,1 \right\}  }$)
+ - **交叉熵（cross entropy）目标函数 **: when y is a discrete label, i.e., for classification problems, other loss functions such as the Bernoulli negative log-likelihood4 have been found to be more appropriate than the squared error. ($$y∈{ \left\{ 0,1 \right\}  }$$)
 
 $$
 L({ f }_{ θ }(x),y)=−ylog{ f }_{ θ }(x)−(1−y)log(1−{ f }_{ θ }(x))
 $$
 
-- ${f}_{\theta}(x)$ to be strictly between 0 to 1: use the sigmoid as non-linearity for the output layer(matches well with the binomial negative log-likelihood cost function)
+- $${f}_{\theta}(x)$$ to be strictly between 0 to 1: use the sigmoid as non-linearity for the output layer(matches well with the binomial negative log-likelihood cost function)
 
 
 
 
 #####Learning a Conditional Probability Model
+
 - loss function as corresponding to a conditional log-likelihood, i.e., the negative log-likelihood (NLL) cost function
 $$
 { L }_{ NLL }({ f }_{ \theta  }(x),y)=−logP(y=y|x=x;θ)
@@ -76,8 +76,9 @@ $$
 {L}_{NLL}=−logP(y|x;θ)={−1}_{y=1}{logp−1}_{y=0}log(1−p)\\ =−ylog{f}_{θ}(x)−(1−y)log(1−{f}_{θ}(x))
 $$
 
-#####Softmax
-- designed for the purpose of specifying multinoulli distributions:
+##### Softmax
+
+- designed for the purpose of specifying **multinoulli distributions**:
 $$
 p=softmax(a)\Longleftrightarrow { p }_{ i }=\frac { { e }^{ { a }_{ i } } }{ \sum { _{ j }^{  }{ { e }^{ { a }_{ j } } } }  } 
 $$
@@ -89,9 +90,11 @@ or
 $$
 \frac { ∂ }{ ∂{ a }_{ k } } { L }_{ NLL }(p,y)=(p-{e}_{y})
 $$
-####6.3.3 Cost Functions For Neural Networks
+#### Cost Functions For Neural Networks
+
 - a good choice for the criterion is maximum likelihood regularized with dropout, possibly also with weight decay.
 
-####6.3.4 Optimization Procedure
-- a good choice for the optimization algorithm for a feedforward network is usually stochastic gradient descent with momentum.
+#### Optimization Procedure
+
+- a good choice for the optimization algorithm for a feed-forward network is usually stochastic gradient descent with momentum.
 
