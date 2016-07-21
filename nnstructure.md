@@ -11,9 +11,9 @@
  { h }^{ k }=tanh({ b }^{ k }+{ W }^{ k }{ h }^{ k-1 })
 $$
  - the input of the neural net: $${ h }^{ 0 }=x$$
- - theoutputofthe k-th hidden layer: ${ h }^{ k }$
+ - the out put of the k-th hidden layer: $${ h }^{ k }$$
 
- - affine transformation $a = b+Wx$ \, elementwise
+ - affine transformation $$a = b+Wx$$ \, elementwise
 $$
 h=\phi (a)⇔{ h }_{ i }=\phi ({ a }_{ i })=\phi ({ b }_{ i }+{ W }_{ i,: }x)
 $$
@@ -35,7 +35,8 @@ $$
 *recurrent networks*
 
 
-####6.3.2 Loss Function and Conditional Log-Likelihood
+#### Loss Function and Conditional Log-Likelihood
+
  - In the 80’s and 90’s the most commonly used loss function was the squared error
 $$
 L({ f }_{ θ }(x),y)={ ||fθ(x)−y|| }^{ 2 }
@@ -49,18 +50,19 @@ $$
 
  - Replacing the squared error by an absolute value makes the neural network try to estimate not the conditional expectation but the conditional median
  
- - **cross entropy objective function**: when y is a discrete label, i.e., for classification problems, other loss functions such as the Bernoulli negative log-likelihood4 have been found to be more appropriate than the squared error. ($y∈{ \left\{ 0,1 \right\}  }$)
+ - **cross entropy objective function**: when y is a discrete label, i.e., for classification problems, other loss functions such as the Bernoulli negative log-likelihood4 have been found to be more appropriate than the squared error. ($$y∈{ \left\{ 0,1 \right\}  }$$)
 
 $$
 L({ f }_{ θ }(x),y)=−ylog{ f }_{ θ }(x)−(1−y)log(1−{ f }_{ θ }(x))
 $$
 
-- ${f}_{\theta}(x)$ to be strictly between 0 to 1: use the sigmoid as non-linearity for the output layer(matches well with the binomial negative log-likelihood cost function)
+- $${f}_{\theta}(x)$$ to be strictly between 0 to 1: use the sigmoid as non-linearity for the output layer(matches well with the binomial negative log-likelihood cost function)
 
 
 
 
-#####Learning a Conditional Probability Model
+##### 条件概率模型 Conditional Probability Model
+
 - loss function as corresponding to a conditional log-likelihood, i.e., the negative log-likelihood (NLL) cost function
 $$
 { L }_{ NLL }({ f }_{ \theta  }(x),y)=−logP(y=y|x=x;θ)
