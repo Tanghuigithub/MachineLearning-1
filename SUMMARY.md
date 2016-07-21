@@ -19,10 +19,9 @@
    * [正则化网络](regulizer.md)
 * [第3章 神经网络编程](nnpractice.md)
    * [Theano](theano.md)
+   * [AlphaGo](alphago.md)
    * [keras](keras.md)
-* [AlphaGo](alphago.md)
 * [第4章 深度学习探索](deeplearning.md)
    * [Attention](attention.md)
-   * [AlphaGo](alphago.md)
    * [word2vec](word2vec.md)
 
