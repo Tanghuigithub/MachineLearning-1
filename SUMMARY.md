@@ -18,5 +18,5 @@
 * [第3章 神经网络编程](nnpractice.md)
 * [第4章 深度学习探索](deeplearning.md)
    * [AlphaGo](alphago.md)
-   * Attention
+   * [Attention](attention.md)
 
