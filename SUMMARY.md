@@ -16,7 +16,7 @@
    * [神经网络结构](nnstructure.md)
    * [正则化网络](regulizer.md)
 * [第3章 神经网络编程](nnpractice.md)
-   * keras
+   * [keras](keras.md)
 * [第4章 深度学习探索](deeplearning.md)
    * [AlphaGo](alphago.md)
    * [Attention](attention.md)
