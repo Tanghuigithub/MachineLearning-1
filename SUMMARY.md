@@ -20,6 +20,7 @@
 * [第3章 神经网络编程](nnpractice.md)
    * [Theano](theano.md)
    * [keras](keras.md)
+* [AlphaGo](alphago.md)
 * [第4章 深度学习探索](deeplearning.md)
    * [Attention](attention.md)
    * [AlphaGo](alphago.md)
