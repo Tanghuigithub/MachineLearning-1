@@ -21,7 +21,7 @@
    * [Theano](theano.md)
    * [keras](keras.md)
 * [第4章 深度学习探索](deeplearning.md)
-   * [AlphaGo](alphago.md)
    * [Attention](attention.md)
+   * [AlphaGo](alphago.md)
    * [word2vec](word2vec.md)
 
