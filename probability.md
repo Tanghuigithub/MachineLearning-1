@@ -84,3 +84,20 @@ $$
 　　首先正态分布是指一个随机实数度量值在整**个实数域**上的**分布规律**。因此它属于概率密度函数类，不是我们所讨论的先验概率$$P(ω_i)$$，也不是后验概率$$P(ω_i|X)$$，而是$$p(x|ω_i)$$。式(2-37)用$$p(x)$$表示，是因为通用公式，如具体到我们的情况，可将(2-37)具体化，则
 
 。
+
+##### 条件概率模型 Conditional Probability Model
+
+- loss function as corresponding to a conditional log-likelihood, i.e., the negative log-likelihood (NLL) cost function
+$$
+{ L }_{ NLL }({ f }_{ \theta  }(x),y)=−logP(y=y|x=x;θ)
+$$
+- example) if y is a continuous random variable and we assume that, given x, it has a Gaussian distribution with mean $${f}_{θ}$$(x) and variance $${\sigma}^{2}$$
+$$
+−logP(y|x;θ)=\frac { 1 }{ 2 } { ({ f }_{ \theta  }(x)−y) }^{ 1 }/{ σ }^{ 2 }+log(2π{ σ }^{ 2 })
+$$
+- minimizing this negative log-likelihood is therefore equivalent to minimizing the squared error loss.
+
+- for discrete variables, the binomial negative log-likelihood cost function corresponds to the conditional log-likelihood associated with the **Bernoulli distribution** (also known as cross entropy) with probability $$p = {f}_{θ}(x)$$ of generating y = 1 given x =$$ x$$
+$$
+{L}_{NLL}=−logP(y|x;θ)={−1}_{y=1}{logp−1}_{y=0}log(1−p)\\ =−ylog{f}_{θ}(x)−(1−y)log(1−{f}_{θ}(x))
+$$
