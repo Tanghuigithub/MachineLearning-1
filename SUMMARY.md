@@ -20,4 +20,5 @@
 * [第4章 深度学习探索](deeplearning.md)
    * [AlphaGo](alphago.md)
    * [Attention](attention.md)
+   * word2vec
 
