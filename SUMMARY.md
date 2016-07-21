@@ -16,6 +16,7 @@
 * [第2章 神经网络入门](nnintro.md)
    * [神经网络结构](nnstructure.md)
    * [正则化网络](regulizer.md)
+   * 函数
 * [第3章 神经网络编程](nnpractice.md)
    * [keras](keras.md)
 * [第4章 深度学习探索](deeplearning.md)
