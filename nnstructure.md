@@ -61,22 +61,7 @@ $$
 
 
 
-##### 条件概率模型 Conditional Probability Model
 
-- loss function as corresponding to a conditional log-likelihood, i.e., the negative log-likelihood (NLL) cost function
-$$
-{ L }_{ NLL }({ f }_{ \theta  }(x),y)=−logP(y=y|x=x;θ)
-$$
-- example) if y is a continuous random variable and we assume that, given x, it has a Gaussian distribution with mean ${f}_{θ}$(x) and variance ${\sigma}^{2}$
-$$
-−logP(y|x;θ)=\frac { 1 }{ 2 } { ({ f }_{ \theta  }(x)−y) }^{ 1 }/{ σ }^{ 2 }+log(2π{ σ }^{ 2 })
-$$
-- minimizing this negative log-likelihood is therefore equivalent to minimizing the squared error loss.
-
-- for discrete variables, the binomial negative log-likelihood cost func- tion corresponds to the conditional log-likelihood associated with the Bernoulli distribution (also known as cross entropy) with probability $p = {f}_{θ}(x)$ of generating y = 1 given x =$ x$
-$$
-{L}_{NLL}=−logP(y|x;θ)={−1}_{y=1}{logp−1}_{y=0}log(1−p)\\ =−ylog{f}_{θ}(x)−(1−y)log(1−{f}_{θ}(x))
-$$
 
 #####Softmax
 - designed for the purpose of specifying multinoulli distributions:
