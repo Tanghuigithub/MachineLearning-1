@@ -132,6 +132,12 @@ categorical_crossentropy:多分类的逻辑回归注意：using this objective r
 
 这是参数初始化模块，在添加layer的时候调用init进行初始化。keras提供了uniform、lecun_uniform、normal、orthogonal、zero、glorot_normal、he_normal这几种。
 
+## callbacks
+
+### ModelCheckpoint
+
+keras.callbacks.ModelCheckpoint(filepath,verbose=0, save_best_only=False)  
+
 ## history
 
 Returns a history object. Its `history` attribute is a record of
