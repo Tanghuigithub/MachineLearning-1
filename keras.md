@@ -136,8 +136,10 @@ categorical_crossentropy:多分类的逻辑回归注意：using this objective r
 
 ### ModelCheckpoint
 
+```
 keras.callbacks.ModelCheckpoint(filepath,verbose=0, save_best_only=False)  
-
+```
+用户每次epoch之后保存模型数据。如果save_best_only=True，则最近验证误差最好的模型数据会被保存下来。filepath是由epoch和logs的键构成的。比如filepath=weights.{epoch:02d}-{val_loss:.2f}.hdf5，那么会保存很多带有epoch和val_loss信息的文件；当然也可以是某个路径。
 ## history
 
 Returns a history object. Its `history` attribute is a record of
