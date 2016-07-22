@@ -1,5 +1,12 @@
 # Theano
 
+自动求导
+加速矩阵运算
+声明时不赋值，编译时可以无值，使用时有值。
+
+Theano Documentation Release 0.7
+
+Deep Learning Tutorial Release 0.1
 
 ### 机器学习中矩阵约定
 
@@ -25,4 +32,4 @@
   (3,2)
   ```
 
-在Theano中，所有的符号必须是有**类型**的。特别地，`T.dscalar`是我们分配给双精度（doubles）的"0-维"数组（标量）的类型。它是一个Theano类型
+在Theano中，所有的符号必须是有**类型**的。特别地，`T.dscalar`是我们分配给双精度（doubles）的"0-维"数组（标量）的类型。它是一个Theano类型。
