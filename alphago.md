@@ -50,13 +50,12 @@ Cython的主要目的是： 简化python调用c语言程序的繁琐封装过程
 
     sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
 
-### h5py==2.5.0
-h5py：将数据储存在hdf5文件中。
+#### 安装Keras==0.3.2
+这就没什么好说的了，自己下载下来就行了，keras Github地址（https://github.com/fchollet/keras）。
 
-    sudo apt-get install libhdf5-dev
-    sudo apt-get install python-h5py
-### PyYAML==3.11
- YAML is a data serialization format designed for human readability and interaction with scripting languages.
+    python setup.py develop --user
+
+
 
     pip install pyyaml
 ### six==1.10.0
@@ -76,10 +75,6 @@ Six is a Python 2 and 3 compatibility library. It provides utility functions for
 
 执行之后，将Theano目录下的theano目录拷贝到python安装目录下的dist-package下就可以了，我的机器是/usr/lib/python2.7/dist-packages
 
-#### 安装Keras==0.3.2
-这就没什么好说的了，自己下载下来就行了，keras Github地址（https://github.com/fchollet/keras）。
-
-    python setup.py develop --user
     
 #### 安装sublime
 
