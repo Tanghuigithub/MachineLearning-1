@@ -2,6 +2,35 @@
 
  Keras是一个极度简化、高度模块化的神经网络第三方库。基于Python+Theano开发，充分发挥了GPU和CPU操作。其开发目的是为了更快的做神经网络实验。适合前期的网络原型设计、支持卷积网络和反复性网络以及两者的结果、支持人工设计的其他网络、在GPU和CPU上运行能够无缝连接。
 
+## 怎么保存Keras模型？
+
+
+### PyYAML==3.11
+ YAML is a data serialization format designed for human readability and interaction with scripting languages.
+ 
+ 如果只保存模型结构，代码如下：
+ 
+ ```python
+ # save as JSON  
+json_string = model.to_json()  
+# save as YAML  
+yaml_string = model.to_yaml()  
+# model reconstruction from JSON:  
+from keras.modelsimport model_from_json  
+model = model_from_json(json_string)  
+   
+# model reconstruction from YAML  
+model = model_from_yaml(yaml_string)  
+ ```
+### h5py==2.5.0
+h5py：将数据储存在hdf5文件中。
+如果需要保存数据：
+```python
+model.save_weights('my_model_weights.h5')  
+model.load_weights('my_model_weights.h5')  
+```
+    sudo apt-get install libhdf5-dev
+    sudo apt-get install python-h5py
 
 ## Layer
 
@@ -21,6 +50,13 @@ layers模块包含了core、convolutional、recurrent、advanced_activations、n
 - Dropout
 - Flatten
 
+### Lambda层
+
+本函数用以对上一层的输入实现任何Theano/TensorFlow表达式
+
+- function：要实现的函数，该函数仅接受一个变量，即上一层的输出
+- output_shape：函数应该返回的值的shape，可以是一个tuple，也可以是一个根据输入shape计算输出shape的函数
+- arguments：可选，字典，用来记录向函数中传递的其他关键字参数
 全连接网络
 
 # Preprocessing
