@@ -18,6 +18,7 @@
    * [神经网络结构](nnstructure.md)
    * [正则化网络](regulizer.md)
    * [循环神经网络](rnn.md)
+   * 优化算法
 * [第3章 神经网络编程](nnpractice.md)
    * [Theano](theano.md)
    * [keras](keras.md)
