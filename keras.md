@@ -49,7 +49,8 @@ layers模块包含了core、convolutional、recurrent、advanced_activations、n
 - Dense
 - Dropout
 - Flatten
-
+- Lambda层
+  - keras.layers.core.Lambda(function, output_shape=None, arguments={})
 ### Lambda层
 
 本函数用以对上一层的输入实现任何Theano/TensorFlow表达式
@@ -75,7 +76,9 @@ model = Sequential([
     Activation('softmax'),
 ])
 ```
+
 增加layer：
+
 ```
 model = Sequential()
  ngram_layer.add(Convolution1D(
@@ -164,6 +167,90 @@ categorical_crossentropy:多分类的逻辑回归注意：using this objective r
 
 这是激活函数模块，keras提供了linear、sigmoid、hard_sigmoid、tanh、softplus、relu、softplus，另外softmax也放在Activations模块里(我觉得放在layers模块里更合理些）。此外，像LeakyReLU和PReLU这种比较新的激活函数，keras在keras.layers.advanced_activations模块里提供。
 
+## 自定义激活函数
+
+可以采用以下几种方法：
+
+from keras import backend as K
+from keras.layers.core import Lambda
+from keras.engine import Layer
+
+### 使用theano/tensorflow的内置函数简单地编写激活函数
+```
+def sigmoid_relu(x):
+    """
+    f(x) = x for x>0
+    f(x) = sigmoid(x)-0.5 for x<=0
+    """
+    return K.relu(x)-K.relu(0.5-K.sigmoid(x))
+```
+
+### 使用Lambda
+
+```
+def lambda_activation(x):
+    """
+    f(x) = max(relu(x),sigmoid(x)-0.5)
+    """
+    return K.maximum(K.relu(x),K.sigmoid(x)-0.5)
+```
+
+### 编写自己的layer（这个例子中参数theta,alpha1,alpha2是固定的超参数，不需要train，故没定义build）
+
+```
+class My_activation(Layer):
+    """
+    f(x) = x for x>0
+    f(x) = alpha1 * x for theta<x<=0
+    f(x) = alpha2 * x for x<=theta
+    """
+    def __init__(self,theta=-5.0,alpha1=0.2,alpha2=0.1,**kwargs):
+        self.theta = theta
+        self.alpha1 = alpha1
+        self.alpha2 = alpha2
+        super(My_activation,self).__init__(**kwargs)
+    def call(self,x,mask=None):
+        fx_0 = K.relu(x) #for x>0
+        fx_1 = self.alpha1*x*K.cast(x>self.theta,K.floatx())*K.cast(x<=0.0,K.floatx()) #for theta<x<=0
+        fx_2 = self.alpha2*x*K.cast(x<=self.theta,K.floatx())#for x<=theta
+        return fx_0+fx_1+fx_2
+    def get_output_shape_for(self, input_shape):
+        #we don't change the input shape
+        return input_shape
+#alpha1,alpha2是可学习超参数
+class Trainable_activation(Layer):
+    """
+    f(x) = x for x>0
+    f(x) = alpha1 * x for theta<x<=0
+    f(x) = alpha2 * x for x<=theta
+    """
+    def __init__(self,init='zero',theta=-5.0,**kwargs):
+        self.init = initializations.get(init)
+        self.theta = theta
+        super(Trainable_activation,self).__init__(**kwargs)
+    def build(self,input_shape):
+        self.alpha1 = self.init(input_shape[1:],name='alpha1')#init alpha1 and alpha2 using ''zero''
+        self.alpha2 = self.init(input_shape[1:],name='alpha2')
+        self.trainable_weights = [self.alpha1,self.alpha2]
+    def call(self,x,mask=None):
+        fx_0 = K.relu(x) #for x>0
+        fx_1 = self.alpha1*x*K.cast(x>self.theta,K.floatx())*K.cast(x<=0.0,K.floatx()) #for theta<x<=0
+        fx_2 = self.alpha2*x*K.cast(x<=self.theta,K.floatx())#for x<=theta
+        return fx_0+fx_1+fx_2
+    def get_output_shape_for(self, input_shape):
+        #we don't change the input shape
+        return input_shape
+```
+
+使用时：
+
+```
+model.add(Activation(sigmoid_relu))
+model.add(Lambda(lambda_activation))
+model.add(My_activation(theta=-5.0,alpha1=0.2,alpha2=0.1))
+model.add(Trainable_activation(init='normal',theta=-5.0))
+```
+
 # 初始化（Initializations）
 
 这是参数初始化模块，在添加layer的时候调用init进行初始化。keras提供了uniform、lecun_uniform、normal、orthogonal、zero、glorot_normal、he_normal这几种。
@@ -182,7 +269,7 @@ Returns a history object. Its `history` attribute is a record of
         training loss values at successive epochs,
         as well as validation loss values (if applicable).
 
-        # Arguments
+# Arguments
             X: data, as a numpy array.
             y: labels, as a numpy array.
             batch_size: int. Number of samples per gradient update.
