@@ -176,6 +176,7 @@ from keras.layers.core import Lambda
 from keras.engine import Layer
 
 ### 使用theano/tensorflow的内置函数简单地编写激活函数
+
 ```
 def sigmoid_relu(x):
     """
