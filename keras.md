@@ -49,10 +49,11 @@ layers模块包含了core、convolutional、recurrent、advanced_activations、n
 - Dense
 - Dropout
 - Flatten
-- Lambda层
-  - keras.layers.core.Lambda(function, output_shape=None, arguments={})
-### Lambda层
+- Lambda
+- TimeDistributedDense
 
+### Lambda层
+  - keras.layers.core.Lambda(function, output_shape=None, arguments={})
 本函数用以对上一层的输入实现任何Theano/TensorFlow表达式
 
 - function：要实现的函数，该函数仅接受一个变量，即上一层的输出
@@ -60,6 +61,12 @@ layers模块包含了core、convolutional、recurrent、advanced_activations、n
 - arguments：可选，字典，用来记录向函数中传递的其他关键字参数
 全连接网络
 
+### TimeDistributed层
+
+```
+keras.layers.core.TimeDistributedDense(output_dim, init='glorot_uniform', activation='linear', weights=None, W_regularizer=None, b_regularizer=None, activity_regularizer=None, W_constraint=None, b_constraint=None, bias=True, input_dim=None, input_length=None)
+```
+为输入序列的每个时间步信号（即维度1）建立一个全连接层，当RNN网络设置为return_sequence=True时尤其有用
 # Preprocessing
 
 这是预处理模块，包括序列数据的处理，文本数据的处理，图像数据的处理。重点看一下图像数据的处理，keras提供了ImageDataGenerator函数,实现data augmentation，数据集扩增，对图像做一些弹性变换，比如水平翻转，垂直翻转，旋转等。
@@ -302,3 +309,15 @@ Returns a history object. Its `history` attribute is a record of
                 to apply a different weight to every timestep of every sample.
                 In this case you should make sure to specify
                 sample_weight_mode="temporal" in compile().
+
+## Regularizers正则项
+
+正则项在优化过程中层的参数或层的激活值添加惩罚项，这些惩罚项将与损失函数一起作为网络的最终优化目标.
+
+惩罚项基于层进行惩罚，目前惩罚项的接口与层有关，但Dense, TimeDistributedDense, MaxoutDense, Covolution1D, Covolution2D具有共同的接口。
+
+这些层有三个关键字参数以施加正则项：
+
+- W_regularizer：施加在权重上的正则项，为WeightRegularizer对象
+- b_regularizer：施加在偏置向量上的正则项，为WeightRegularizer对象
+- activity_regularizer：施加在输出上的正则项，为ActivityRegularizer对象
