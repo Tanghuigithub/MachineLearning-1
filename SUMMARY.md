@@ -12,6 +12,7 @@
    * [贝叶斯](bayesian.md)
    * [支持向量机](svm.md)
    * [SMO](smo.md)
+   * 方法概论
 * [距离](distance.md)
 * [第2章 神经网络入门](nnintro.md)
    * [函数](nnfunction.md)
