@@ -1,8 +1,14 @@
-# Attention
+# 注意机制（Attention Mechanism）
+
+注意机制是由人类视觉注意所启发的，是一种关注图像中特定部分的能力。注意机制可被整合到语言处理和图像识别的架构中以帮助网络学习在做出预测时应该「关注」什么。
+
+技术博客：深度学习和自然语言处理中的注意和记忆[链接](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
 
 Attention是选择显著区域的人眼视觉过程，这方面的算法模型注重给出fixation-prediction，典型的有Itti和Koch 1998年给出的[视觉注意机制模型][1]，attention主要是从人眼产生注意的过程和视觉系统的特征研究算法模型。
 
-## Machine Translation
+## 应用
+
+### Machine Translation
 最早将Attention-based model引入NLP的就是2015年ICLR，Bahdanau的[《Neural machine translation by jointly learning to align and translate》][2]。
 >  The decoder decides parts of the source sentence to pay **attention** to. By letting the decoder have an **attention mechanism**, we relieve the encoder from the burden of having to encode all information in the source sentence into a fixedlength vector.
 
