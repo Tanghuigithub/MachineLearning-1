@@ -39,6 +39,12 @@ The Log-Bilinear Language Model(LBL) proposed by Mnih and Hinton combines Bengio
 
 A previous study \cite{lbl} proposed a widely used model architecture for estimating neural network language model.
 
+### GloVe
+
+Glove 是一种为话语获取矢量表征（嵌入）的无监督学习算法。GloVe 的使用目的和 word2vec 一样，但 GloVe 具有不同的矢量表征，因为它是在共现（co-occurrence）统计数据上训练的。
+
+论文：GloVe：用于词汇表征（Word Representation）的全局矢量（Global Vector）（GloVe: Global Vectors for Word Representation ）
+
 ## 2. Word Vector  {#ID12}  
 
 在训练模型前，对语料构建合适的词向量模型。
