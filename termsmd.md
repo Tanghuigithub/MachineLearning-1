@@ -173,13 +173,8 @@ PPT：用于机器学习的神经网络 讲座6a
 技术博客：斯坦福CS231n：优化算法（http://cs231n.github.io/neural-networks-3/）
 技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
 
-序列到序列（Seq2Seq）
 
-序列到序列（Sequence-to-Sequence）模型读取一个序列（如一个句子）作为输入，然后产生另一个序列作为输出。它和标准的 RNN 不同；在标准的 RNN 中，输入序列会在网络开始产生任何输出之前被完整地读取。通常而言，Seq2Seq 通过两个分别作为编码器和解码器的 RNN 实现。神经网络机器翻译是一类典型的 Seq2Seq 模型。
-
-论文：使用神经网络的序列到序列学习（Sequence to Sequence Learning with Neural Networks）
-
-随机梯度下降（SGD：Stochastic Gradient Descent）
+## 随机梯度下降（SGD：Stochastic Gradient Descent）
 
 随机梯度下降是一种被用在训练阶段学习网络参数的基于梯度的优化算法。梯度通常使用反向传播算法计算。在实际应用中，人们使用微小批量版本的 SGD，其中的参数更新基于批案例而非单个案例进行执行，这能增加计算效率。vanilla SGD 存在许多扩展，包括动量（Momentum）、Adagrad、rmsprop、Adadelta 或 Adam。
 
@@ -187,7 +182,7 @@ PPT：用于机器学习的神经网络 讲座6a
 技术博客：斯坦福CS231n：优化算法（http://cs231n.github.io/neural-networks-3/）
 技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
 
-Softmax
+## Softmax
 
 Softmax 函数通常被用于将原始分数（raw score）的矢量转换成用于分类的神经网络的输出层上的类概率（class probability）。它通过对归一化常数（normalization constant）进行指数化和相除运算而对分数进行规范化。如果我们正在处理大量的类，例如机器翻译中的大量词汇，计算归一化常数是很昂贵的。有许多种可以让计算更高效的替代选择，包括分层 Softmax（Hierarchical Softmax）或使用基于取样的损失函数，如 NCE。
 
