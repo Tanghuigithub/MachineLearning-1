@@ -54,26 +54,6 @@ DBN 是一类以无监督的方式学习数据的分层表征的概率图形模�
 技术博客：Inceptionism：向神经网络掘进更深（https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html）
 
 
-嵌入（Embedding）
-
-一个嵌入映射到一个输入表征，比如一个词或一句话映射到一个矢量。一种流行的嵌入是词语嵌入（word embedding，国内常用的说法是：词向量），如 word2vec 或 GloVe。我们也可以嵌入句子、段落或图像。比如说，通过将图像和他们的文本描述映射到一个共同的嵌入空间中并最小化它们之间的距离，我们可以将标签和图像进行匹配。嵌入可以被明确地学习到，比如在 word2vec 中；嵌入也可作为监督任务的一部分例如情感分析（Sentiment Analysis）。通常一个网络的输入层是通过预先训练的嵌入进行初始化，然后再根据当前任务进行微调（fine-tuned）。
-
-梯度爆炸问题（Exploding Gradient Problem）
-
-梯度爆炸问题是梯度消失问题（Vanishing Gradient Problem）的对立面。在深度神经网络中，梯度可能会在反向传播过程中爆炸，导致数字溢出。解决梯度爆炸的一个常见技术是执行梯度裁剪（Gradient Clipping）。
-
-论文：训练循环神经网络的困难之处（On the difficulty of training Recurrent Neural Networks）
-
-微调（Fine-Tuning）
-
-Fine-Tuning 这种技术是指使用来自另一个任务（例如一个无监督训练网络）的参数初始化网络，然后再基于当前任务更新这些参数。比如，自然语言处理架构通常使用 word2vec 这样的预训练的词向量（word embeddings），然后这些词向量会在训练过程中基于特定的任务（如情感分析）进行更新。
-
-梯度裁剪（Gradient Clipping）
-
-梯度裁剪是一种在非常深度的网络（通常是循环神经网络）中用于防止梯度爆炸（exploding gradient）的技术。执行梯度裁剪的方法有很多，但常见的一种是当参数矢量的 L2 范数（L2 norm）超过一个特定阈值时对参数矢量的梯度进行标准化，这个特定阈值根据函数：新梯度=梯度*阈值/L2范数（梯度）{new_gradients = gradients * threshold / l2_norm(gradients)}确定。
-
-论文：训练循环神经网络的困难之处（On the difficulty of training Recurrent Neural Networks）
-
 GloVe
 
 Glove 是一种为话语获取矢量表征（嵌入）的无监督学习算法。GloVe 的使用目的和 word2vec 一样，但 GloVe 具有不同的矢量表征，因为它是在共现（co-occurrence）统计数据上训练的。
