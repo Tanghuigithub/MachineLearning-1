@@ -18,3 +18,10 @@ Alexnet 是一种卷积神经网络架构的名字，这种架构曾在 2012 年
 GoogleLeNet 是曾赢得了 2014 年 ILSVRC 挑战赛的一种卷积神经网络架构。这种网络使用 Inception 模块（Inception Module）以减少参数和提高网络中计算资源的利用率。
 
 论文：使用卷积获得更深（Going Deeper with Convolutions）
+
+## Deep Dream
+
+这是谷歌发明的一种试图用来提炼深度卷积神经网络获取的知识的技术。这种技术可以生成新的图像或转换已有的图片从而给它们一种幻梦般的感觉，尤其是递归地应用时。
+
+代码：Github 上的 Deep Dream（https://github.com/google/deepdream）
+技术博客：Inceptionism：向神经网络掘进更深（https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html）
