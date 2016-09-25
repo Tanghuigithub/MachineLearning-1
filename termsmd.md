@@ -161,22 +161,6 @@ ReLU
 
 论文：用于图像识别的深度残差网络（Deep Residual Learning for Image Recognition）
 
-RMSProp
-
-RMSProp 是一种基于梯度的优化算法。它与 Adagrad 类似，但引入了一个额外的衰减项抵消 Adagrad 在学习率上的快速下降。
-
-PPT：用于机器学习的神经网络 讲座6a
-技术博客：斯坦福CS231n：优化算法（http://cs231n.github.io/neural-networks-3/）
-技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
-
-
-## 随机梯度下降（SGD：Stochastic Gradient Descent）
-
-随机梯度下降是一种被用在训练阶段学习网络参数的基于梯度的优化算法。梯度通常使用反向传播算法计算。在实际应用中，人们使用微小批量版本的 SGD，其中的参数更新基于批案例而非单个案例进行执行，这能增加计算效率。vanilla SGD 存在许多扩展，包括动量（Momentum）、Adagrad、rmsprop、Adadelta 或 Adam。
-
-论文：用于在线学习和随机优化的自适应次梯度方法（Adaptive Subgradient Methods for Online Learning and Stochastic Optimization）
-技术博客：斯坦福CS231n：优化算法（http://cs231n.github.io/neural-networks-3/）
-技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
 
 ## Softmax
 
