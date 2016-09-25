@@ -6,6 +6,13 @@
 
 一个嵌入映射到一个输入表征，比如一个词或一句话映射到一个矢量。一种流行的嵌入是词语嵌入（word embedding，国内常用的说法是：词向量），如 word2vec 或 GloVe。我们也可以嵌入句子、段落或图像。比如说，通过将图像和他们的文本描述映射到一个共同的嵌入空间中并最小化它们之间的距离，我们可以将标签和图像进行匹配。嵌入可以被明确地学习到，比如在 word2vec 中；嵌入也可作为监督任务的一部分例如情感分析（Sentiment Analysis）。通常一个网络的输入层是通过预先训练的嵌入进行初始化，然后再根据当前任务进行微调（fine-tuned）。
 
+## word2vec
+
+word2vec 是一种试图通过预测文档中话语的上下文来学习词向量（word embedding）的算法和工具 (https://code.google.com/p/word2vec/)。最终得到的词矢量（word vector）有一些有趣的性质，例如vector('queen') ~= vector('king') - vector('man') + vector('woman') （女王~=国王-男人+女人）。两个不同的目标函数可以用来学习这些嵌入：Skip-Gram 目标函数尝试预测一个词的上下文，CBOW  目标函数则尝试从词上下文预测这个词。
+
+论文：向量空间中词汇表征的有效评估（Efficient Estimation of Word Representations in Vector Space）
+论文：分布式词汇和短语表征以及他们的组合性（Distributed Representations of Words and Phrases and their Compositionality）
+论文：解释 word2vec 参数学习（word2vec Parameter Learning Explained）
 
 ## Abstract
 
