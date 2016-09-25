@@ -1,5 +1,12 @@
 # word2vec
 
+首先来理解嵌入的概念：
+
+## 嵌入（Embedding）
+
+一个嵌入映射到一个输入表征，比如一个词或一句话映射到一个矢量。一种流行的嵌入是词语嵌入（word embedding，国内常用的说法是：词向量），如 word2vec 或 GloVe。我们也可以嵌入句子、段落或图像。比如说，通过将图像和他们的文本描述映射到一个共同的嵌入空间中并最小化它们之间的距离，我们可以将标签和图像进行匹配。嵌入可以被明确地学习到，比如在 word2vec 中；嵌入也可作为监督任务的一部分例如情感分析（Sentiment Analysis）。通常一个网络的输入层是通过预先训练的嵌入进行初始化，然后再根据当前任务进行微调（fine-tuned）。
+
+
 ## Abstract
 
 Word2vec training is an unsupervised task, there’s no good way to objectively evaluate the result. Evaluation depends on your end application.
