@@ -19,9 +19,17 @@ GoogleLeNet 是曾赢得了 2014 年 ILSVRC 挑战赛的一种卷积神经网络
 
 论文：使用卷积获得更深（Going Deeper with Convolutions）
 
+## VGG
+
+VGG 是在 2014 年 ImageNet 定位和分类比赛中分别斩获第一和第二位置的卷积神经网络模型。这个 VGG 模型包含 16-19 个权重层，并使用了大小为 3×3 和 1×1 的小型卷积过滤器。
+
+论文：用于大规模图像识别的非常深度的卷积网络（Very Deep Convolutional Networks for Large-Scale Image Recognition）
+
 ## Deep Dream
 
 这是谷歌发明的一种试图用来提炼深度卷积神经网络获取的知识的技术。这种技术可以生成新的图像或转换已有的图片从而给它们一种幻梦般的感觉，尤其是递归地应用时。
 
 代码：Github 上的 Deep Dream（https://github.com/google/deepdream）
 技术博客：Inceptionism：向神经网络掘进更深（https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html）
+
+
