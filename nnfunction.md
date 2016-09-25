@@ -2,6 +2,7 @@
 
 -------------
 
+
 ## 激活函数（Activation Function）
 
 为了让神经网络能够学习复杂的决策边界（decision boundary），我们在其一些层应用一个非线性激活函数。最常用的函数包括  sigmoid、tanh、ReLU（Rectified Linear Unit 线性修正单元） 以及这些函数的变体。
@@ -94,9 +95,14 @@ or
 $$
 \frac { ∂ }{ ∂{ a }_{ k } } { L }_{ NLL }(p,y)=(p-{e}_{y})
 $$
-#### Cost Functions For Neural Networks
+## Cost Functions 
 
 - a good choice for the criterion is maximum likelihood regularized with dropout, possibly also with weight decay.
+
+
+### 分类交叉熵损失（Categorical Cross-Entropy Loss）
+
+分类交叉熵损失也被称为负对数似然（negative log likelihood）。这是一种用于解决分类问题的流行的损失函数，可用于测量两种概率分布（通常是真实标签和预测标签）之间的相似性。它可用 L = -sum(y * log(y_prediction)) 表示，其中 y 是真实标签的概率分布（通常是一个one-hot vector），y_prediction 是预测标签的概率分布，通常来自于一个 softmax。
 
 #### Optimization Procedure
 
