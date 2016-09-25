@@ -4,11 +4,11 @@
 
 本文整理了一些深度学习领域的专业名词及其简单释义，同时还附加了一些相关的论文或文章链接。本文编译自 wildml，作者仍在继续更新该表，编译如有错漏之处请指正。文章中的论文与 PPT 读者可点击阅读原文下载。
 
-激活函数（Activation Function）
+## 激活函数（Activation Function）
 
 为了让神经网络能够学习复杂的决策边界（decision boundary），我们在其一些层应用一个非线性激活函数。最常用的函数包括  sigmoid、tanh、ReLU（Rectified Linear Unit 线性修正单元） 以及这些函数的变体。
 
-Adadelta
+## Adadelta
 
 Adadelta 是一个基于梯度下降的学习算法，可以随时间调整适应每个参数的学习率。它是作为 Adagrad 的改进版提出的，它比超参数（hyperparameter）更敏感而且可能会太过严重地降低学习率。Adadelta 类似于 rmsprop，而且可被用来替代 vanilla SGD。
 
@@ -16,7 +16,7 @@ Adadelta 是一个基于梯度下降的学习算法，可以随时间调整适�
 技术博客：斯坦福 CS231n：优化算法（http://cs231n.github.io/neural-networks-3/）
 技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
 
-Adagrad
+## Adagrad
 
 Adagrad 是一种自适应学习率算法，能够随时间跟踪平方梯度并自动适应每个参数的学习率。它可被用来替代vanilla SGD (http://www.wildml.com/deep-learning-glossary/#sgd)；而且在稀疏数据上更是特别有用，在其中它可以将更高的学习率分配给更新不频繁的参数。
 
@@ -24,24 +24,20 @@ Adagrad 是一种自适应学习率算法，能够随时间跟踪平方梯度并
 技术博客：斯坦福 CS231n：优化算法（http://cs231n.github.io/neural-networks-3/）
 技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
 
-Adam
+## Adam
 
 Adam 是一种类似于 rmsprop 的自适应学习率算法，但它的更新是通过使用梯度的第一和第二时刻的运行平均值（running average）直接估计的，而且还包括一个偏差校正项。
 
 论文：Adam：一种随机优化方法（Adam: A Method for Stochastic Optimization）
 技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
 
-仿射层（Affine Layer）
+## 仿射层（Affine Layer）
 
 神经网络中的一个全连接层。仿射（Affine）的意思是前面一层中的每一个神经元都连接到当前层中的每一个神经元。在许多方面，这是神经网络的「标准」层。仿射层通常被加在卷积神经网络或循环神经网络做出最终预测前的输出的顶层。仿射层的一般形式为 y = f(Wx + b)，其中 x 是层输入，w 是参数，b 是一个偏差矢量，f 是一个非线性激活函数。
 
-注意机制（Attention Mechanism）
 
-注意机制是由人类视觉注意所启发的，是一种关注图像中特定部分的能力。注意机制可被整合到语言处理和图像识别的架构中以帮助网络学习在做出预测时应该「关注」什么。
 
-技术博客：深度学习和自然语言处理中的注意和记忆（http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/）
-
-Alexnet
+## Alexnet
 
 Alexnet 是一种卷积神经网络架构的名字，这种架构曾在 2012 年 ILSVRC 挑战赛中以巨大优势获胜，而且它还导致了人们对用于图像识别的卷积神经网络（CNN）的兴趣的复苏。它由 5 个卷积层组成。其中一些后面跟随着最大池化（max-pooling）层和带有最终 1000 条路径的 softmax (1000-way softmax)的 3个全连接层。Alexnet 被引入到了使用深度卷积神经网络的 ImageNet 分类中。
 
