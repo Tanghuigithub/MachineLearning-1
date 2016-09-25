@@ -8,3 +8,9 @@ gates (Eq. 4). Given an input vector xt at time step t, the previous output ht�
 - 重置门
 
 ## GRU（gated recurrent unit）
+
+## 双向循环神经网络（Bidirectional RNN）
+
+双向循环神经网络是一类包含两个方向不同的 RNN 的神经网络。其中的前向 RNN 从起点向终点读取输入序列，而反向 RNN 则从终点向起点读取。这两个 RNN 互相彼此堆叠，它们的状态通常通过附加两个矢量的方式进行组合。双向 RNN 常被用在自然语言问题中，因为在自然语言中我们需要同时考虑话语的前后上下文以做出预测。
+
+论文：双向循环神经网络（Bidirectional Recurrent Neural Networks）
