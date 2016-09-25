@@ -38,3 +38,12 @@ gates (Eq. 4). Given an input vector xt at time step t, the previous output ht�
 双向循环神经网络是一类包含两个方向不同的 RNN 的神经网络。其中的前向 RNN 从起点向终点读取输入序列，而反向 RNN 则从终点向起点读取。这两个 RNN 互相彼此堆叠，它们的状态通常通过附加两个矢量的方式进行组合。双向 RNN 常被用在自然语言问题中，因为在自然语言中我们需要同时考虑话语的前后上下文以做出预测。
 
 论文：双向循环神经网络（Bidirectional Recurrent Neural Networks）
+
+## 应用
+
+### 神经网络机器翻译（NMT：Neural Machine Translation）
+
+NMT 系统使用神经网络实现语言（如英语和法语）之间的翻译。NMT 系统可以使用双语语料库进行端到端的训练，这有别于需要手工打造特征和开发的传统机器翻译系统。NMT 系统通常使用编码器和解码器循环神经网络实现，它可以分别编码源句和生成目标句。
+
+论文：使用神经网络的序列到序列学习（Sequence to Sequence Learning with Neural Networks）
+论文：为统计机器翻译使用 RNN 编码器-解码器学习短语表征（Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation）
