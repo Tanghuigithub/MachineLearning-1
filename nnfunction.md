@@ -2,6 +2,10 @@
 
 -------------
 
+## 激活函数（Activation Function）
+
+为了让神经网络能够学习复杂的决策边界（decision boundary），我们在其一些层应用一个非线性激活函数。最常用的函数包括  sigmoid、tanh、ReLU（Rectified Linear Unit 线性修正单元） 以及这些函数的变体。
+
  - **motivation**: to compose *simple transformations* in order to obtain 
 *highly non-linear* ones
  - (MLPs compose affine transformations and element-wise non-linearities)
@@ -34,7 +38,7 @@ $$
 *recurrent networks*
 
 
-####6.3.2 Loss Function and Conditional Log-Likelihood
+#### 6.3.2 Loss Function and Conditional Log-Likelihood
  - In the 80’s and 90’s the most commonly used loss function was the squared error
 $$
 L({ f }_{ θ }(x),y)={ ||fθ(x)−y|| }^{ 2 }
