@@ -27,5 +27,5 @@
    * [Attention](attention.md)
    * [word2vec](word2vec.md)
    * [AlphaGo](alphago.md)
-   * terms.md
+   * [terms.md](termsmd.md)
 
