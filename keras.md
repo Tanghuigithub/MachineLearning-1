@@ -1,6 +1,163 @@
 # keras
 
  Keras是一个极度简化、高度模块化的神经网络第三方库。基于Python+Theano开发，充分发挥了GPU和CPU操作。其开发目的是为了更快的做神经网络实验。适合前期的网络原型设计、支持卷积网络和反复性网络以及两者的结果、支持人工设计的其他网络、在GPU和CPU上运行能够无缝连接。
+ 
+ ## ANN
+
+```
+class Network():
+    def init(self,sizes):
+        self.num_layers=len(sizes)
+        self.sizes=sizes
+        self.biases=[np.random.randn(y,1) for y in sizes[1:]] #
+        self.weights=[np.random.randn(y,x) for x,y in zip(sizes[:-1],sizes[1:])]
+```
+- sizes=[2,3,1]
+- 权值$w$和偏置$b$是需要初始化,梯度下降算法是在某个点在梯度方向上开始不断迭代计算最优的w和b，所以w,b必须有一个初始值作为起始迭代点。
+随机地初始化它们，我们调用了numpy中的函数生成符合**高斯分布**的数据。
+```python
+        # Either we have a random seed or the WTS for each layer from a
+        # previously trained NeuralNet
+        if allwts is None:
+            self.rand_gen = np.random.RandomState(training_params['SEED'])
+        else:
+            self.rand_gen = None
+```
+其次这里的w，b表示成向量形式，原因是矢量化编程可以在线性代数库中加快速度，那么到底该怎么表示w，和b呢？让我们从最简单的问题开始，看看最简单的单个神经元：
+![此处输入图片的描述][1]
+
+### 激活函数
+
+```
+def feedforward(self,a):
+for b,w in zip(self.biases,self.weights):
+a=sigmoid_vec(np.dot(w,a)+b)
+return a
+```
+
+```
+def sigmoid(z):
+return 1.0 / (1.0 + np.exp(-z))
+sigmoid_vec=np.vectorize(sigmoid)
+```
+
+### 随机梯度下降算法
+
+```
+def SGD(self,training_data,epochs,mini_batch_size,eta,test_data=None):
+```
+随机梯度下降的思想不是迭代所有的训练样本，而是**挑一部分**出来来代表所有的训练样本，这样可以加快训练速度。换句话说就是，原始梯度下降算法是一个一个地训练，而SGD是**一批一批**地训练，而这个批的大小就是`mini_batch_size`，并且这个批是**随机**挑出来的，而等这些批都训练完了我们叫一次迭代，并且给了它一个更好听的名字叫`epochs`，`eta`是学习率$\eta$，`test_data`是测试数据。看代码！
+```
+if test_data: 
+    n_test=len(test_data)
+    n=len(training_data)
+for j in xrange(epochs):#开始迭代
+    random.shuffle(training_data)#为了是随机地挑选出来的批次，先调用这个函数扰乱训练样本，这样就可以制造随机了
+    mini_batches=[training_data[k:k+mini_batch_size]
+    for k in xrange(0,n,mini_batch_size)] #索引分批的数据
+        for mini_batch in mini_batches:
+            self.update_mini_batch(mini_batch,eta) #根据规则更新权值w和偏置b
+    if test_data:#在每次迭代结束时，我们都会利用测试数据来测试一下当前参数的准确率
+        print "Epoch {0}:{1} / {2}".format(j,self.evaluate(test_data),n_test)
+    else:
+        print "Epoch {0} complete".format(j)
+```
+这里又用到了update_mini_batch方法，它直接把更新w和b的过程单独抽象了出来，这个函数是梯度下降的代码，而只有加上这个函数前面的代码才能叫随机梯度下降。过会我们再来分析这个函数，在迭代完一次（一个epoch）之后，我们使用了测试数据来检验我们的神经网络（已经根据mini-batch学习到了权值和偏置）的识别数字准确率。这里调用了一个函数叫evaluate，它定义为：
+```
+def evaluate(self,test_data):
+    test_results=[(np.argmax(self.feedforward(x)),y) for (x,y) in test_data]
+    return sum(int(x==y) for (x,y) in test_results)
+```
+这个函数的主要作用就是返回识别正确的样本个数。其中np.argmax(a)是返回a中最大值的下标，这里我们可以看到self.feedforward(x)，其中x是test_data中的输入图像，然后神经网络计算出最终的结果是分类数字的标签，它是一个shape=(1,10)矩阵，比如数字5表示为[0,0,0,0,0,1,0,0,0,0]，这时1最大，就返回下标5，其实也就表示了数字5。然后将这个结果和test_data中的y作比较，如果相等就表示识别正确，sum就是用来计数的。
+
+### 梯度下降算法
+
+$\Delta \nabla_b,\Delta \nabla_w, \nabla_b,\nabla_w$
+下面来看看梯度下降的代码update_mini_batch:
+```
+def update_mini_batch(self,mini_batch,eta):
+    nabla_b=[np.zeros(b.shape) for b in self.biases] #迭代的初值当然是0了，记住这和偏置b的初始值不一样额
+    nabla_w=[np.zeros(w.shape) for w in self.weights]
+
+for x,y in mini_batch:#扫描mini_batch中的每个样本，由于算的是平均梯度
+    delta_nabla_b,delta_nabla_w=self.backprop(x,y) #反向传播计算梯度，每个样本(x,y)
+
+nabla_b=[nb + dnb for nb,dnb in zip(nabla_b,delta_nabla_b)] #计算一个mini_batch中的所有样本的梯度和，因为我们要算的是平均梯度
+
+nabla_w=[nw + dnw for nw,dnw in zip(nabla_w,delta_nabla_w)]
+
+self.weights=[w-(eta/len(mini_batch))*nw for w,nw in zip(self.weights,nabla_w)] #
+
+self.biases=[b-(eta/len(mini_batch)) * nb for b,nb in zip(self.biases,nabla_b)]
+```
+
+### BP算法
+
+原始梯度下降是针对每个样本都计算出一个梯度，然后沿着这个梯度移动。
+
+而随机梯度下降是针对多个样本（一个mini_batch）计算出一个平均梯度，然后这个梯度移动，那么这个epochs就是权值和偏置更新的次数了。
+
+随机梯度下降学习算法的重点又在这个BP算法了：
+```
+def backprop(self,x,y):#它是用来计算单个训练样本的梯度的
+    nabla_b=[np.zeros(b.shape) for b in self.biases] #梯度值初始化为0
+    nabla_w=[np.zeros(w.shape) for w in self.weights]
+```
+#### 前向计算
+
+```
+activation=x
+activations=[x] #存储所有的激活，一层一层的
+zs=[]#存储所有的z向量，一层一层的，这个z是指每一层的输入计算结果（z=wx+b）
+for b,w in zip(self.biases,self.weights):
+    z=np.dot(w,activation) + b
+    zs.append(z)
+activation=sigmoid_vec(z)
+activations.append(activation)
+```
+
+#### 后向传递
+
+```
+delta=self.cost_derivative(activations[-1],y) * sigmoid_prime_vec(zs[-1])
+```
+因为这里的$C=\frac12\sum_j(y_j-a_j)^2$,（单个训练样本的损失函数），所以$\frac{\partial C}{\partial y_j^L}=a_j-y_j$
+于是下面的cost_derivative就直接返回了这个式子。
+
+这里我们使用了2个辅助函数：
+```
+def cost_derivative(self,output_activations,y):
+    return output_activations – y
+
+def sigmoid_prime(z): #sigmoid函数的导数
+    return sigmoid(z) * (1-sigmoid(z))
+```
+其中zs[-1]表示最后一层神经元的输入，上述delta对应BP算法中的式子：
+$
+\delta_j^L=\frac{\partial C}{\partial y_j^L}\sigma'z_j^L
+$
+delta就是指最后一层的残差。代码接下来：
+```
+nabla_b[-1]=delta #对应式子BP3：
+```
+$\frac{\partial C}{\partial b_j^L}=\delta_j^l$
+```
+nabla_w[-1]=np.dot(delta,activations[-2].transpose())#对应式子BP4：
+```
+$
+\frac{\partial C}{\partial a_{jk}^L}=a_k^{l-1}\delta_j^l
+$
+以上算的是最后一层的相关变量。下面是反向计算前一层的梯度根据最后一层的梯度。
+```
+for l in xrange(2,self.num_layers):
+z=zs[-l]
+spv=sigmoid_prime_vec(z)
+delta=np.dot(self.weights[-l+1].transpose(),delta) * spv
+nabla_b[-l]=delta
+nabla_w[-l]=np.dot(delta,activations[-l-1].transpose())
+return (nabla_b,nabla_w)
+```
+这便是BP算法的全部了。详细代码请看这里的[network.py][2]。
 
 ## 怎么保存Keras模型？
 
