@@ -4,6 +4,14 @@
 
 深度学习模型的输入数据可以有多个信道。图像就是个典型的例子，它有红、绿和蓝三个颜色信道。一个图像可以被表示成一个三维的张量（Tensor），其中的维度对应于信道、高度和宽度。自然语言数据也可以有多个信道，比如在不同类型的嵌入（embedding）形式中。
 
+## 分批标准化（BN：Batch Normalization）
+
+分批标准化是一种按小批量的方式标准化层输入的技术。它能加速训练过程，允许使用更高的学习率，还可用作规范器（regularizer）。人们发现，分批标准化在卷积和前馈神经网络中应用时非常高效，但尚未被成功应用到循环神经网络上。
+
+论文：分批标准化：通过减少内部协变量位移（Covariate Shift）加速深度网络训练（Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift）
+论文：使用分批标准化的循环神经网络（Batch Normalized Recurrent Neural Networks）
+
+
 ## 经验风险最小化
 ## 正则化/结构风险最小化
 降低过拟合风险
