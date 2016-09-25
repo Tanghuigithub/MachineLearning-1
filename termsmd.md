@@ -25,28 +25,13 @@
 序列自编码器论文：Semi-supervised Sequence Learning
 
 
-
-
-
-
-
-
-
-
-
-
 ## 深度信念网络（DBN：Deep Belief Network）
 
 DBN 是一类以无监督的方式学习数据的分层表征的概率图形模型。DBN 由多个隐藏层组成，这些隐藏层的每一对连续层之间的神经元是相互连接的。DBN 通过彼此堆叠多个 RBN（限制波尔兹曼机）并一个接一个地训练而创建。
 
 论文：深度信念网络的一种快速学习算法（A fast learning algorithm for deep belief nets）
 
-## Deep Dream
 
-这是谷歌发明的一种试图用来提炼深度卷积神经网络获取的知识的技术。这种技术可以生成新的图像或转换已有的图片从而给它们一种幻梦般的感觉，尤其是递归地应用时。
-
-代码：Github 上的 Deep Dream（https://github.com/google/deepdream）
-技术博客：Inceptionism：向神经网络掘进更深（https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html）
 
 
 ## GloVe
