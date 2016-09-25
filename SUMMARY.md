@@ -20,6 +20,7 @@
    * [神经网络结构](nnstructure.md)
    * [正则化网络](regulizer.md)
    * [循环神经网络](rnn.md)
+   * 卷积神经网络
 * [第3章 神经网络编程](nnpractice.md)
    * [keras](keras.md)
    * [Theano](theano.md)
