@@ -205,11 +205,6 @@ Theano 是一个让你可以定义、优化和评估数学表达式的 Python �
 
 论文：训练循环神经网络的困难之处（On the difficulty of training Recurrent Neural Networks）
 
-VGG
-
-VGG 是在 2014 年 ImageNet 定位和分类比赛中分别斩获第一和第二位置的卷积神经网络模型。这个 VGG 模型包含 16-19 个权重层，并使用了大小为 3×3 和 1×1 的小型卷积过滤器。
-
-论文：用于大规模图像识别的非常深度的卷积网络（Very Deep Convolutional Networks for Large-Scale Image Recognition）
 
 
 
