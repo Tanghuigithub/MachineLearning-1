@@ -64,15 +64,8 @@ Keras
 
 Kears 是一个基于 Python 的深度学习库，其中包括许多用于深度神经网络的高层次构建模块。它可以运行在 TensorFlow 或 Theano 上。
 
-LSTM
 
-长短期记忆（Long Short-Term Memory）网络通过使用内存门控机制防止循环神经网络（RNN）中的梯度消失问题（vanishing gradient problem）。使用 LSTM 单元计算 RNN 中的隐藏状态可以帮助该网络有效地传播梯度和学习长程依赖（long-range dependency）。
-
-论文：长短期记忆（LONG SHORT-TERM MEMORY）
-技术博客：理解 LSTM 网络（http://colah.github.io/posts/2015-08-Understanding-LSTMs/）
-技术博客：循环神经网络教程，第 4 部分：用 Python 和 Theano 实现 GRU/LSTM RNN（http://www.wildml.com/2015/10/recurrent-neural-network-tutorial-part-4-implementing-a-grulstm-rnn-with-python-and-theano/）
-
-最大池化（Max-Pooling）
+## 最大池化（Max-Pooling）
 
 池化（Pooling）操作通常被用在卷积神经网络中。一个最大池化层从一块特征中选取最大值。和卷积层一样，池化层也是通过窗口（块）大小和步幅尺寸进行参数化。比如，我们可能在一个 10×10 特征矩阵上以 2 的步幅滑动一个 2×2 的窗口，然后选取每个窗口的 4 个值中的最大值，得到一个 5×5 特征矩阵。池化层通过只保留最突出的信息来减少表征的维度；在这个图像输入的例子中，它们为转译提供了基本的不变性（即使图像偏移了几个像素，仍可选出同样的最大值）。池化层通常被安插在连续卷积层之间。
 
@@ -80,13 +73,13 @@ MNIST
 
 MNIST数据集可能是最常用的一个图像识别数据集。它包含 60,000 个手写数字的训练样本和 10,000 个测试样本。每一张图像的尺寸为 28×28像素。目前最先进的模型通常能在该测试集中达到 99.5% 或更高的准确度。
 
-动量（Momentum）
+## 动量（Momentum）
 
 动量是梯度下降算法（Gradient Descent Algorithm）的扩展，可以加速和阻抑参数更新。在实际应用中，在梯度下降更新中包含一个动量项可在深度网络中得到更好的收敛速度（convergence rate）。
 
 论文：通过反向传播（back-propagating error）错误学习表征
 
-多层感知器（MLP：Multilayer Perceptron）
+## 多层感知器（MLP：Multilayer Perceptron）
 
 多层感知器是一种带有多个全连接层的前馈神经网络，这些全连接层使用非线性激活函数（activation function）处理非线性可分的数据。MLP 是多层神经网络或有两层以上的深度神经网络的最基本形式。
 
@@ -94,35 +87,35 @@ MNIST数据集可能是最常用的一个图像识别数据集。它包含 60,00
 
 参见分类交叉熵损失（Categorical Cross-Entropy Loss）。
 
-神经网络机器翻译（NMT：Neural Machine Translation）
+## 神经网络机器翻译（NMT：Neural Machine Translation）
 
 NMT 系统使用神经网络实现语言（如英语和法语）之间的翻译。NMT 系统可以使用双语语料库进行端到端的训练，这有别于需要手工打造特征和开发的传统机器翻译系统。NMT 系统通常使用编码器和解码器循环神经网络实现，它可以分别编码源句和生成目标句。
 
 论文：使用神经网络的序列到序列学习（Sequence to Sequence Learning with Neural Networks）
 论文：为统计机器翻译使用 RNN 编码器-解码器学习短语表征（Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation）
 
-神经图灵机（NTM：Neural Turing Machine）
+## 神经图灵机（NTM：Neural Turing Machine）
 
 NTM 是可以从案例中推导简单算法的神经网络架构。比如，NTM 可以通过案例的输入和输出学习排序算法。NTM 通常学习记忆和注意机制的某些形式以处理程序执行过程中的状态。
 
 论文：神经图灵机（Neural Turing Machines）
 
-非线性（Nonlinearity）
+## 非线性（Nonlinearity）
 
 参见激活函数（Activation Function）。
 
-噪音对比估计（NCE：noise-contrastive estimation）
+## 噪音对比估计（NCE：noise-contrastive estimation）
 
 噪音对比估计是一种通常被用于训练带有大输出词汇的分类器的采样损失（sampling loss）。在大量的可能的类上计算 softmax 是异常昂贵的。使用 NCE，我们可以将问题降低成二元分类问题，这可以通过训练分类器区别对待取样和「真实」分布以及人工生成的噪声分布来实现。
 
 论文：噪音对比估计：一种用于非标准化统计模型的新估计原理（Noise-contrastive estimation: A new estimation principle for unnormalized statistical models ）
 论文：使用噪音对比估计有效地学习词向量（Learning word embeddings efficiently with noise-contrastive estimation）
 
-池化
+## 池化
 
 参见最大池化（Max-Pooling）或平均池化（Average-Pooling）。
 
-受限玻尔兹曼机（RBN：Restricted Boltzmann Machine）
+## 受限玻尔兹曼机（RBN：Restricted Boltzmann Machine）
 
 RBN 是一种可被解释为一个随机人工神经网络的概率图形模型。RBN 以无监督的形式学习数据的表征。RBN 由可见层和隐藏层以及每一个这些层中的二元神经元的连接所构成。RBN 可以使用对比散度（contrastive divergence）进行有效的训练，这是梯度下降的一种近似。
 
