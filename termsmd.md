@@ -16,7 +16,7 @@
 
 
 
-自编码器（Autoencoder）
+## 自编码器（Autoencoder）
 
 自编码器是一种神经网络模型，它的目标是预测输入自身，这通常通过网络中某个地方的「瓶颈（bottleneck）」实现。通过引入瓶颈，我们迫使网络学习输入更低维度的表征，从而有效地将输入压缩成一个好的表征。自编码器和 PCA 等降维技术相关，但因为它们的非线性本质，它们可以学习更为复杂的映射。目前已有一些范围涵盖较广的自编码器存在，包括 降噪自编码器（Denoising Autoencoders）、变自编码器（Variational Autoencoders）和序列自编码器（Sequence Autoencoders）。
 
@@ -24,9 +24,6 @@
 变自编码器论文：Auto-Encoding Variational Bayes
 序列自编码器论文：Semi-supervised Sequence Learning
 
-平均池化（Average-Pooling）
-
-平均池化是一种在卷积神经网络中用于图像识别的池化（Pooling）技术。它的工作原理是在特征的局部区域上滑动窗口，比如像素，然后再取窗口中所有值的平均。它将输入表征压缩成一种更低维度的表征。
 
 反向传播（Backpropagation）
 
