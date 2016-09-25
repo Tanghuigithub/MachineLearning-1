@@ -33,11 +33,6 @@
 论文：分批标准化：通过减少内部协变量位移（Covariate Shift）加速深度网络训练（Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift）
 论文：使用分批标准化的循环神经网络（Batch Normalized Recurrent Neural Networks）
 
-双向循环神经网络（Bidirectional RNN）
-
-双向循环神经网络是一类包含两个方向不同的 RNN 的神经网络。其中的前向 RNN 从起点向终点读取输入序列，而反向 RNN 则从终点向起点读取。这两个 RNN 互相彼此堆叠，它们的状态通常通过附加两个矢量的方式进行组合。双向 RNN 常被用在自然语言问题中，因为在自然语言中我们需要同时考虑话语的前后上下文以做出预测。
-
-论文：双向循环神经网络（Bidirectional Recurrent Neural Networks）
 
 Caffe
 
