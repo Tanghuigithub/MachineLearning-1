@@ -5,7 +5,7 @@ RNN 模型通过隐藏状态（或称记忆）连续进行相互作用。它可�
 技术博客：了解 LSTM 网络（http://colah.github.io/posts/2015-08-Understanding-LSTMs/）
 技术博客：循环神经网络教程第1部分——介绍 RNN （http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/）
 
-递归神经网络（Recursive Neural Network）
+## 递归神经网络（Recursive Neural Network）
 
 递归神经网络是循环神经网络的树状结构的一种泛化（generalization）。每一次递归都使用相同的权重。就像 RNN 一样，递归神经网络可以使用向后传播（backpropagation）进行端到端的训练。尽管可以学习树结构以将其用作优化问题的一部分，但递归神经网络通常被用在已有预定义结构的问题中，如自然语言处理的解析树中。
 
