@@ -235,22 +235,7 @@ VGG 是在 2014 年 ImageNet 定位和分类比赛中分别斩获第一和第二
 
 论文：用于大规模图像识别的非常深度的卷积网络（Very Deep Convolutional Networks for Large-Scale Image Recognition）
 
-word2vec
-
-word2vec 是一种试图通过预测文档中话语的上下文来学习词向量（word embedding）的算法和工具 (https://code.google.com/p/word2vec/)。最终得到的词矢量（word vector）有一些有趣的性质，例如vector('queen') ~= vector('king') - vector('man') + vector('woman') （女王~=国王-男人+女人）。两个不同的目标函数可以用来学习这些嵌入：Skip-Gram 目标函数尝试预测一个词的上下文，CBOW  目标函数则尝试从词上下文预测这个词。
-
-论文：向量空间中词汇表征的有效评估（Efficient Estimation of Word Representations in Vector Space）
-论文：分布式词汇和短语表征以及他们的组合性（Distributed Representations of Words and Phrases and their Compositionality）
-论文：解释 word2vec 参数学习（word2vec Parameter Learning Explained）
 
 
 
-©本文由机器之心编译，转载请联系本公众号获得授权。
-✄------------------------------------------------
-加入机器之心（全职记者/实习生）：hr@almosthuman.cn
-投稿或寻求报道：editor@almosthuman.cn
-广告&商务合作：bd@almosthuman.cn
 
-
-阅读原文
-阅读原文
