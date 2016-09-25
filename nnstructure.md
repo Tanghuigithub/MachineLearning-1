@@ -3,6 +3,18 @@
 
 -------------
 
+## 反向传播（Backpropagation）
+
+反向传播是一种在神经网络中用来有效地计算梯度的算法，或更一般而言，是一种前馈计算图（feedforward computational graph）。其可以归结成从网络输出开始应用分化的链式法则，然后向后传播梯度。反向传播的第一个应用可以追溯到 1960 年代的 Vapnik 等人，但论文 Learning representations by back-propagating errors常常被作为引用源。
+
+技术博客：计算图上的微积分学：反向传播（http://colah.github.io/posts/2015-08-Backprop/）
+
+## 通过时间的反向传播（BPTT：Backpropagation Through Time）
+
+通过时间的反向传播是应用于循环神经网络（RNN）的反向传播算法。BPTT 可被看作是应用于 RNN 的标准反向传播算法，其中的每一个时间步骤（time step）都代表一个计算层，而且它的参数是跨计算层共享的。因为 RNN 在所有的时间步骤中都共享了同样的参数，一个时间步骤的错误必然能「通过时间」反向到之前所有的时间步骤，该算法也因而得名。当处理长序列（数百个输入）时，为降低计算成本常常使用一种删节版的 BPTT。删节的 BPTT 会在固定数量的步骤之后停止反向传播错误。
+
+论文：Backpropagation Through Time: What It Does and How to Do It
+
 
 给定训练集$$D=\{(x_1,y_1)，(x_2,y_2)，\dots,(x_m,y_m)\}$$,$$x_i \in \mathbb R^d$$,$$y_i \in \mathbb R^c$$，即输入实例由d个属性描述，输出$c$维实值向量.
 
