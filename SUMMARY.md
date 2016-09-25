@@ -11,7 +11,7 @@
    * [距离](distance.md)
 * [第1章 基础知识](basic.md)
    * [方法概论](generality.md)
-   * [贝叶斯](bayesian.md)  
+   * [贝叶斯](bayesian.md)
    * [支持向量机](svm.md)
    * [SMO](smo.md)
 * [第2章 神经网络入门](nnintro.md)
@@ -27,4 +27,5 @@
    * [Attention](attention.md)
    * [word2vec](word2vec.md)
    * [AlphaGo](alphago.md)
+   * terms.md
 
