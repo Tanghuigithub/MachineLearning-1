@@ -42,7 +42,7 @@ Glove 是一种为话语获取矢量表征（嵌入）的无监督学习算法�
 
 
 
-GRU
+## GRU
 
 GRU（Gated Recurrent Unit：门控循环单元）是一种 LSTM 单元的简化版本，拥有更少的参数。和 LSTM 细胞（LSTM cell）一样，它使用门控机制，通过防止梯度消失问题（vanishing gradient problem）让循环神经网络可以有效学习长程依赖（long-range dependency）。GRU 包含一个复位和更新门，它们可以根据当前时间步骤的新值决定旧记忆中哪些部分需要保留或更新。
 
@@ -55,19 +55,15 @@ Highway Layer　是使用门控机制控制通过层的信息流的一种神经�
 
 论文：Highway Networks
 
-ICML
+## ICML
 
 即国际机器学习大会（International Conference for Machine Learning），一个顶级的机器学习会议。
 
-ILSVRC
+## ILSVRC
 
 即 ImageNet 大型视觉识别挑战赛（ImageNet Large Scale Visual Recognition Challenge），该比赛用于评估大规模对象检测和图像分类的算法。它是计算机视觉领域最受欢迎的学术挑战赛。过去几年中，深度学习让错误率出现了显著下降，从 30% 降到了不到 5%，在许多分类任务中击败了人类。
 
-Inception模块（Inception Module）
 
-Inception模块被用在卷积神经网络中，通过堆叠 1×1 卷积的降维（dimensionality reduction）带来更高效的计算和更深度的网络。
-
-论文：使用卷积获得更深（Going Deeper with Convolutions）
 
 Keras
 
