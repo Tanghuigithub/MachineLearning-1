@@ -49,17 +49,13 @@ DBN 是一类以无监督的方式学习数据的分层表征的概率图形模�
 技术博客：Inceptionism：向神经网络掘进更深（https://research.googleblog.com/2015/06/inceptionism-going-deeper-into-neural.html）
 
 
-GloVe
+## GloVe
 
 Glove 是一种为话语获取矢量表征（嵌入）的无监督学习算法。GloVe 的使用目的和 word2vec 一样，但 GloVe 具有不同的矢量表征，因为它是在共现（co-occurrence）统计数据上训练的。
 
 论文：GloVe：用于词汇表征（Word Representation）的全局矢量（Global Vector）（GloVe: Global Vectors for Word Representation ）
 
-GoogleLeNet
 
-GoogleLeNet 是曾赢得了 2014 年 ILSVRC 挑战赛的一种卷积神经网络架构。这种网络使用 Inception 模块（Inception Module）以减少参数和提高网络中计算资源的利用率。
-
-论文：使用卷积获得更深（Going Deeper with Convolutions）
 
 GRU
 
