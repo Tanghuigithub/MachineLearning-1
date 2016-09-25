@@ -1,12 +1,16 @@
 # Theano
 
-自动求导
-加速矩阵运算
-声明时不赋值，编译时可以无值，使用时有值。
 
-Theano Documentation Release 0.7
+Theano 是一个让你可以定义、优化和评估数学表达式的 Python 库。它包含许多用于深度神经网络的构造模块。Theano 是类似于 TensorFlow 的低级别库。更高级别的库包括Keras 和 Caffe。
 
-Deep Learning Tutorial Release 0.1
+- 自动求导
+- 加速矩阵运算
+- 声明时不赋值，编译时可以无值，使用时有值。
+
+## Reference Books 
+
+- Theano Documentation Release 0.7
+- Deep Learning Tutorial Release 0.1
 
 ### 机器学习中矩阵约定
 
