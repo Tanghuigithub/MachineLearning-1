@@ -87,12 +87,7 @@ MNIST数据集可能是最常用的一个图像识别数据集。它包含 60,00
 
 参见分类交叉熵损失（Categorical Cross-Entropy Loss）。
 
-## 神经网络机器翻译（NMT：Neural Machine Translation）
 
-NMT 系统使用神经网络实现语言（如英语和法语）之间的翻译。NMT 系统可以使用双语语料库进行端到端的训练，这有别于需要手工打造特征和开发的传统机器翻译系统。NMT 系统通常使用编码器和解码器循环神经网络实现，它可以分别编码源句和生成目标句。
-
-论文：使用神经网络的序列到序列学习（Sequence to Sequence Learning with Neural Networks）
-论文：为统计机器翻译使用 RNN 编码器-解码器学习短语表征（Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation）
 
 ## 神经图灵机（NTM：Neural Turing Machine）
 
