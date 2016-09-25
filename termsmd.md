@@ -26,12 +26,6 @@
 
 
 
-分批标准化（BN：Batch Normalization）
-
-分批标准化是一种按小批量的方式标准化层输入的技术。它能加速训练过程，允许使用更高的学习率，还可用作规范器（regularizer）。人们发现，分批标准化在卷积和前馈神经网络中应用时非常高效，但尚未被成功应用到循环神经网络上。
-
-论文：分批标准化：通过减少内部协变量位移（Covariate Shift）加速深度网络训练（Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift）
-论文：使用分批标准化的循环神经网络（Batch Normalized Recurrent Neural Networks）
 
 
 Caffe
