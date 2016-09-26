@@ -8,7 +8,9 @@ CNN 使用卷积连接从输入的局部区域中提取的特征。大部分 CNN
 ## Methods
 ---
 
-### Pooling
+### Pooling 池化
+
+参见最大池化（Max-Pooling）或平均池化（Average-Pooling）。
 
 #### 最大池化（Max-Pooling）
 
