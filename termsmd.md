@@ -64,11 +64,7 @@ Kears 是一个基于 Python 的深度学习库，其中包括许多用于深度
 
 MNIST数据集可能是最常用的一个图像识别数据集。它包含 60,000 个手写数字的训练样本和 10,000 个测试样本。每一张图像的尺寸为 28×28像素。目前最先进的模型通常能在该测试集中达到 99.5% 或更高的准确度。
 
-## 动量（Momentum）
 
-动量是梯度下降算法（Gradient Descent Algorithm）的扩展，可以加速和阻抑参数更新。在实际应用中，在梯度下降更新中包含一个动量项可在深度网络中得到更好的收敛速度（convergence rate）。
-
-论文：通过反向传播（back-propagating error）错误学习表征
 
 ## 多层感知器（MLP：Multilayer Perceptron）
 
