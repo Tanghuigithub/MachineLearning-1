@@ -74,9 +74,14 @@ $$
 
 分类交叉熵损失也被称为负对数似然（negative log likelihood）。这是一种用于解决分类问题的流行的损失函数，可用于测量两种概率分布（通常是真实标签和预测标签）之间的相似性。它可用 L = -sum(y * log(y_prediction)) 表示，其中 y 是真实标签的概率分布（通常是一个one-hot vector），y_prediction 是预测标签的概率分布，通常来自于一个 softmax。
 
+### 负对数似然（NLL：Negative Log Likelihood）
+
+参见分类交叉熵损失（Categorical Cross-Entropy Loss）。
+
 #### Optimization Procedure
 
 - a good choice for the optimization algorithm for a feed-forward network is usually stochastic gradient descent with momentum.
+
 
 
 #### 6.3.2 Loss Function and Conditional Log-Likelihood
@@ -104,7 +109,7 @@ $$
 
 
 
-#####Learning a Conditional Probability Model
+##### Learning a Conditional Probability Model
 
 - loss function as corresponding to a conditional log-likelihood, i.e., the negative log-likelihood (NLL) cost function
 $$
