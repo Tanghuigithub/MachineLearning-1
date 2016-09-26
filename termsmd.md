@@ -93,9 +93,7 @@ NTM 是可以从案例中推导简单算法的神经网络架构。比如，NTM 
 论文：噪音对比估计：一种用于非标准化统计模型的新估计原理（Noise-contrastive estimation: A new estimation principle for unnormalized statistical models ）
 论文：使用噪音对比估计有效地学习词向量（Learning word embeddings efficiently with noise-contrastive estimation）
 
-## 池化
 
-参见最大池化（Max-Pooling）或平均池化（Average-Pooling）。
 
 ## 受限玻尔兹曼机（RBN：Restricted Boltzmann Machine）
 
