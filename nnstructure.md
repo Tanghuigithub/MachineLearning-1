@@ -2,6 +2,10 @@
 
 
 -------------
+## 多层感知器（MLP：Multilayer Perceptron）
+
+多层感知器是一种带有多个全连接层的前馈神经网络，这些全连接层使用非线性激活函数（activation function）处理非线性可分的数据。MLP 是多层神经网络或有两层以上的深度神经网络的最基本形式。
+
 
 ## 反向传播（Backpropagation）
 
