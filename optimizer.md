@@ -2,6 +2,12 @@
 
 ## 算法
 
+## 动量（Momentum）
+
+动量是梯度下降算法（Gradient Descent Algorithm）的扩展，可以加速和阻抑参数更新。在实际应用中，在梯度下降更新中包含一个动量项可在深度网络中得到更好的收敛速度（convergence rate）。
+
+论文：通过反向传播（back-propagating error）错误学习表征
+
 ### 随机梯度下降（SGD：Stochastic Gradient Descent）
 
 随机梯度下降是一种被用在训练阶段学习网络参数的基于梯度的优化算法。梯度通常使用反向传播算法计算。在实际应用中，人们使用微小批量版本的 SGD，其中的参数更新基于批案例而非单个案例进行执行，这能增加计算效率。vanilla SGD 存在许多扩展，包括动量（Momentum）、Adagrad、rmsprop、Adadelta 或 Adam。
