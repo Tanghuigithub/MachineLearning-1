@@ -2,6 +2,23 @@
 
  Keras是一个极度简化、高度模块化的神经网络第三方库。基于Python+Theano开发，充分发挥了GPU和CPU操作。其开发目的是为了更快的做神经网络实验。适合前期的网络原型设计、支持卷积网络和反复性网络以及两者的结果、支持人工设计的其他网络、在GPU和CPU上运行能够无缝连接。
  
+ ## 基本概念
+ 
+ ### 张量（tensor）
+ 
+ 其维数从0到n,`axis`则对应“轴”的概念。
+ 
+```python
+import numpy as np
+
+a = np.array([[1,2],[3,4]])
+sum0 = np.sum(a, axis=0)
+sum1 = np.sum(a, axis=1)
+
+print sum0
+print sum1
+```
+
  ## ANN
 
 ```
