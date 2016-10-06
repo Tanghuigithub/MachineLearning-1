@@ -11,7 +11,7 @@ Caffe 是由伯克利大学视觉和学习中心开发的一种深度学习框�
 
 TensorFlow是一个开源 C ++ / Python 软件库，用于使用数据流图的数值计算，尤其是深度神经网络。它是由谷歌创建的。在设计方面，它最类似于 Theano，但比  Caffe 或 Keras 更低级。
 
-
+## 举例：Minist handwritten
 
 ## 关于纹理基元和特征抽取
 
