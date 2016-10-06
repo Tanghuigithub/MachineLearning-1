@@ -2,8 +2,21 @@
 
 -------------
 
+## 神经元模型
 
-## 激活函数（Activation Function）
+从最简单的说起：线性神经元
+$$
+ { y }=b +\sum_i { x}_{ i }{ w }_{ i }
+$$
+McCulloch-Pitts接着提出了二值的，必须达到阈值才发送一定量的冲激。
+
+之后的Rectified Linear Neurons(Linear threshold neuron)超出阈值的部分仍是线性的。
+
+Simoid neurons可以说是用连续函数版的二值，通常使用Logistic函数，这样一来求导方便。
+
+接下来又有了Stochastic的处理，输出（0~1）作为产生冲激（1）的概率
+
+### 激活函数（Activation Function）
 
 为了让神经网络能够学习复杂的决策边界（decision boundary），我们在其一些层应用一个非线性激活函数。最常用的函数包括  sigmoid、tanh、ReLU（Rectified Linear Unit 线性修正单元） 以及这些函数的变体。
 
