@@ -10,9 +10,8 @@ CNN 使用卷积连接从输入的局部区域中提取的特征。大部分 CNN
 
 ### Pooling 池化
 
-参见最大池化（Max-Pooling）或平均池化（Average-Pooling）。
 
-![]( http://static.zybuluo.com/sixijinling/oo489jzvkk9odwbk4vz9djr1/convolution.png)
+![pooling]( http://static.zybuluo.com/sixijinling/oo489jzvkk9odwbk4vz9djr1/convolution.png)
 
 #### 最大池化（Max-Pooling）
 
