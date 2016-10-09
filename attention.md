@@ -8,14 +8,18 @@ Attention是选择显著区域的人眼视觉过程，这方面的算法模型�
 
 ## 应用
 
-### Machine Translation
+### 1. Machine Translation
+
 最早将Attention-based model引入NLP的就是2015年ICLR，Bahdanau的[《Neural machine translation by jointly learning to align and translate》][2]。
 >  The decoder decides parts of the source sentence to pay **attention** to. By letting the decoder have an **attention mechanism**, we relieve the encoder from the burden of having to encode all information in the source sentence into a fixedlength vector.
 
 ### Motivation
+
 传统翻译模型将整句的信息压缩至定长向量，使得长句上的翻译效果差。
 soft-align：在进行翻译时，虽然语序会变，但大体的语义部分是有对应关系的，如果能找到这个关系，就不用整句整句encode。
+
 ### Approach
+
 新模型**RNNsearch**：
 对每一个target word $y_i$,都计算一个context vector $c_i$——用softmax刻画“expected annotation”。$y_i$究竟对应哪一个annotation，可以看成一种分布（多分类），这样就可以用一个权重/概率的期望来刻画。
 $$
@@ -23,8 +27,19 @@ $$
 $$
 - 对齐（Align）与翻译同时进行。
 
+### 2. Image Caption
 
+![](http://static.zybuluo.com/sixijinling/pu4yhiw0im7t8fj30ruxvkpv/image_1aocgvgqt1hn5l5k6jt1rbiei411.png)
+**《Show, Attend and Tell: Neural Image Caption Generation with Visual Attention* 》**
+主要思想还是和上次讲的机器翻译类似：
 
+$$
+\alpha _{ti}=\frac {\exp(e_{ti})}{\sum _{k-1}^L \exp(e_{tk})}
+$$
+
+看成是**multinoulli**分布
+而这里的context vector计算为：
+$$\hat z_t=\phi(\{a_i\},\{\alpha _i\})$$
 
 
   [1]: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=730558
