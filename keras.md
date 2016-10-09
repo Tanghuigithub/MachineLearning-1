@@ -2,6 +2,18 @@
 
  Keras是一个极度简化、高度模块化的神经网络第三方库。基于Python+Theano开发，充分发挥了GPU和CPU操作。其开发目的是为了更快的做神经网络实验。适合前期的网络原型设计、支持卷积网络和反复性网络以及两者的结果、支持人工设计的其他网络、在GPU和CPU上运行能够无缝连接。
  
+ ## Core 常用层
+ 
+ ### Input
+ 
+ ## 卷积层
+ 
+ ### Convolution2D
+ 
+ ```input_shape = (3,128,128)```代表128*128的彩色RGB图像
+
+
+ 
  ## 基本概念
  
  ### 张量（tensor）
@@ -30,8 +42,9 @@ class Network():
         self.weights=[np.random.randn(y,x) for x,y in zip(sizes[:-1],sizes[1:])]
 ```
 - sizes=[2,3,1]
-- 权值$w$和偏置$b$是需要初始化,梯度下降算法是在某个点在梯度方向上开始不断迭代计算最优的w和b，所以w,b必须有一个初始值作为起始迭代点。
+- 权值$$w$$和偏置$$b$$是需要初始化,梯度下降算法是在某个点在梯度方向上开始不断迭代计算最优的w和b，所以w,b必须有一个初始值作为起始迭代点。
 随机地初始化它们，我们调用了numpy中的函数生成符合**高斯分布**的数据。
+
 ```python
         # Either we have a random seed or the WTS for each layer from a
         # previously trained NeuralNet
@@ -41,7 +54,7 @@ class Network():
             self.rand_gen = None
 ```
 其次这里的w，b表示成向量形式，原因是矢量化编程可以在线性代数库中加快速度，那么到底该怎么表示w，和b呢？让我们从最简单的问题开始，看看最简单的单个神经元：
-![此处输入图片的描述][1]
+
 
 ### 激活函数
 
@@ -58,7 +71,7 @@ return 1.0 / (1.0 + np.exp(-z))
 sigmoid_vec=np.vectorize(sigmoid)
 ```
 
-### 随机梯度下降算法
+### SGD
 
 ```
 def SGD(self,training_data,epochs,mini_batch_size,eta,test_data=None):
@@ -241,6 +254,7 @@ layers模块包含了core、convolutional、recurrent、advanced_activations、n
 keras.layers.core.TimeDistributedDense(output_dim, init='glorot_uniform', activation='linear', weights=None, W_regularizer=None, b_regularizer=None, activity_regularizer=None, W_constraint=None, b_constraint=None, bias=True, input_dim=None, input_length=None)
 ```
 为输入序列的每个时间步信号（即维度1）建立一个全连接层，当RNN网络设置为return_sequence=True时尤其有用
+
 # Preprocessing
 
 这是预处理模块，包括序列数据的处理，文本数据的处理，图像数据的处理。重点看一下图像数据的处理，keras提供了ImageDataGenerator函数,实现data augmentation，数据集扩增，对图像做一些弹性变换，比如水平翻转，垂直翻转，旋转等。
