@@ -6,14 +6,41 @@
  
  ### Input
  
+ ### Permute层
+ 
+ 当需要将RNN和CNN链接时可能用到它。用来将输入的维度重排。
+ 
+ ```
+ keras.layers.core.Permute(dims)
+ ```
+ 其中```dims```指定重排的模式（不包括样本数的维度），默认下标从1开始。
+ 
  ## 卷积层
  
  ### Convolution2D
  
- ```input_shape = (3,128,128)```代表128*128的彩色RGB图像
+ ```
+ keras.layers.convolutional.Convolution2D(nb_filter, nb_row, nb_col, init='glorot_uniform', activation='linear', weights=None, border_mode='valid', subsample=(1, 1), dim_ordering='th', W_regularizer=None, b_regularizer=None, activity_regularizer=None, W_constraint=None, b_constraint=None, bias=True)
+ ```
+ 
+举例子：
 
+```
+model.add(Convolution2D(64, 3, 3, border_mode='same', input_shape=(3, 256, 256)))
+```
+
+这里的前三个参数是64个3X3的filter的意思，
 
  
+ ```input_shape = (3,128,128)```代表128*128的彩色RGB图像.```input_shape```不包含样本数的维度，在其内部实现中，实际上是（None，3，128，128）或者（None，128，128，3）
+
+> - ‘th’模式下，输入形如（samples,channels，rows，cols）的4D张量
+- ‘tf’模式下，输入形如（samples，rows，cols，channels）的4D张量
+
+所以现在model.output_shape == (None, 64, 256, 256)
+
+- subsample：长为2的tuple，输出对输入的下采样因子，更普遍的称呼是“strides”
+
  ## 基本概念
  
  ### 张量（tensor）
