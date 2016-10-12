@@ -40,6 +40,26 @@ model.add(Convolution2D(64, 3, 3, border_mode='same', input_shape=(3, 256, 256))
 所以现在model.output_shape == (None, 64, 256, 256)
 
 - subsample：长为2的tuple，输出对输入的下采样因子，更普遍的称呼是“strides”
+- border_mode＝‘full’，same,valid
+
+![](http://images2015.cnblogs.com/blog/736761/201509/736761-20150918171130070-2129954644.png)
+
+ ## 池化层
+ 
+ ### MaxPooling2D
+ 
+ 
+ ```
+ keras.layers.pooling.MaxPooling2D(pool_size=(2, 2), strides=None, border_mode='valid', dim_ordering='default')
+ ```
+
+## 规范层
+
+### BatchNormalization
+
+```
+keras.layers.normalization.BatchNormalization(epsilon=1e-06, mode=0, axis=-1, momentum=0.9, weights=None, beta_init='zero', gamma_init='one')
+```
 
  ## 基本概念
  
