@@ -2,10 +2,27 @@
 
  Keras是一个极度简化、高度模块化的神经网络第三方库。基于Python+Theano开发，充分发挥了GPU和CPU操作。其开发目的是为了更快的做神经网络实验。适合前期的网络原型设计、支持卷积网络和反复性网络以及两者的结果、支持人工设计的其他网络、在GPU和CPU上运行能够无缝连接。
  
- ## Core 常用层
+## 基本概念
  
- ### Input
+### 张量（tensor）
  
+ 其维数从0到n,`axis`则对应“轴”的概念。
+ 
+```python
+import numpy as np
+
+a = np.array([[1,2],[3,4]])
+sum0 = np.sum(a, axis=0)
+sum1 = np.sum(a, axis=1)
+
+print sum0
+print sum1
+```
+
+ 
+ ## 1. Core 常用层
+ 
+
  ### Permute层
  
  当需要将RNN和CNN链接时可能用到它。用来将输入的维度重排。
@@ -15,7 +32,19 @@
  ```
  其中```dims```指定重排的模式（不包括样本数的维度），默认下标从1开始。
  
- ## 卷积层
+ ### Lambda层
+
+```
+keras.layers.core.Lambda(function, output_shape=None, arguments={})
+```
+- ```output_shape```：函数应该返回的值的shape，可以是一个tuple，也可以是一个根据输入shape计算输出shape的函数
+
+```python
+model.add(layers.Lambda(squeeze_dim, output_shape=squeeze_dim_shape))
+
+```
+ 
+ ## 2. 卷积层
  
  ### Convolution2D
  
@@ -61,22 +90,17 @@ model.add(Convolution2D(64, 3, 3, border_mode='same', input_shape=(3, 256, 256))
 keras.layers.normalization.BatchNormalization(epsilon=1e-06, mode=0, axis=-1, momentum=0.9, weights=None, beta_init='zero', gamma_init='one')
 ```
 
- ## 基本概念
- 
- ### 张量（tensor）
- 
- 其维数从0到n,`axis`则对应“轴”的概念。
- 
-```python
-import numpy as np
+上一层是激活函数，这一层对它的输出值进行规范化（均值接近0，标准差接近1）
 
-a = np.array([[1,2],[3,4]])
-sum0 = np.sum(a, axis=0)
-sum1 = np.sum(a, axis=1)
+- mode - 0 按样本规范化，默认输入为2D
+  - axis 指定规范化的轴 （samples，channels，rows，cols）
+    - 1 沿通道轴（channel） 规范化（4D图像张量）意味着对每个特征图进行规范化
+ 
+ 
+## 自定义层
 
-print sum0
-print sum1
-```
+
+
 
  ## ANN
 
