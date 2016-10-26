@@ -1,5 +1,19 @@
 # 注意机制（Attention Mechanism）
 
+
+## Neural Turing Machines
+
+Instead of specifying a single location, the RNN gives “attention distribution” which describe how we spread out the amount we care about different memory positions. As such, the result of the read operation is a weighted sum.
+
+
+## Attentional Interfaces
+
+We’d like attention to be differentiable, so that we can learn where to focus. To do this, we use the same trick Neural Turing Machines use: we focus everywhere, just to different extents.
+
+Attention can also be used on the interface between a convolutional neural network and an RNN. This allows the RNN to look at different position of an image every step. One popular use of this kind of attention is for image captioning. First, a conv net processes the image, extracting high-level features. Then an RNN runs, generating a description of the image. As it generates each word in the description, the RNN focuses on the conv nets interpretation of the relevant parts of the image. We can explicitly visualize this:
+
+![](http://distill.pub/2016/augmented-rnns/assets/show-attend-tell.png)
+
 注意机制是由人类视觉注意所启发的，是一种关注图像中特定部分的能力。注意机制可被整合到语言处理和图像识别的架构中以帮助网络学习在做出预测时应该「关注」什么。
 
 技术博客：深度学习和自然语言处理中的注意和记忆[链接](http://www.wildml.com/2016/01/attention-and-memory-in-deep-learning-and-nlp/)
@@ -41,6 +55,14 @@ $$
 而这里的context vector计算为：
 $$\hat z_t=\phi(\{a_i\},\{\alpha _i\})$$
 
+## Adaptive Computation Time
+
+## Neural Programmer
+
+## Reference
+---
+
+- [Augmented-RNNs](http://distill.pub/2016/augmented-rnns/#neural-turing-machines)
 
   [1]: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=730558
   [2]: http://www.cl.uni-heidelberg.de/courses/ws14/deepl/BahdanauETAL14.pdf
