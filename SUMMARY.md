@@ -14,6 +14,7 @@
    * [贝叶斯](bayesian.md)
    * [支持向量机](svm.md)
    * [SMO](smo.md)
+   * CRF
 * [第2章 神经网络入门](nnintro.md)
    * [函数](nnfunction.md)
    * [优化算法](optimizer.md)
