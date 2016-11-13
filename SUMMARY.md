@@ -25,6 +25,7 @@
 * [第3章 神经网络编程](nnpractice.md)
    * [keras](keras.md)
    * [Theano](theano.md)
+   * caffe
 * [第4章 深度学习探索](deeplearning.md)
    * [Attention](attention.md)
    * [word2vec](word2vec.md)
