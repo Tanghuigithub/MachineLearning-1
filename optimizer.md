@@ -4,18 +4,11 @@
 
 深度学习的优化算法，说白了就是梯度下降。每次的参数更新有两种方式：
 
-1.遍历全部数据集算一次损失函数，然后算函数对各个参数的梯度，更新梯度。这种方法每更新一次参数都要把数据集里的所有样本都看一遍，计算量开销大，计算速度慢，不支持在线学习，这称为Batch gradient descent，批梯度下降。
+1.遍历全部数据集算一次损失函数，然后算函数对各个参数的梯度，更新梯度。这种方法每更新一次参数都要把数据集里的所有样本都看一遍，计算量开销大，计算速度慢，不支持在线学习，这称为Batch gradient descent，批梯度下降。The gradients are accumulated over the entire traing set.
 
 2.每看一个数据就算一下损失函数，然后求梯度更新参数，这个称为随机梯度下降，stochastic gradient descent。这个方法速度比较快，但是收敛性能不太好，可能在最优点附近晃来晃去，hit不到最优点。两次参数的更新也有可能互相抵消掉，造成目标函数震荡的比较剧烈。
 
 为了克服两种方法的缺点，现在一般采用的是一种折中手段，**mini-batch gradient decent**，小批的梯度下降，这种方法把数据分为若干个批，按批来更新参数，这样，**一个批中的一组数据共同决定了本次梯度的方向**，下降起来就不容易跑偏，减少了随机性。另一方面因为批的样本数与整个数据集相比小了很多，计算量也不是很大。
-
-
-### 动量（Momentum）
-
-动量是梯度下降算法（Gradient Descent Algorithm）的扩展，可以加速和阻抑参数更新。在实际应用中，在梯度下降更新中包含一个动量项可在深度网络中得到更好的收敛速度（convergence rate）。
-
-论文：通过反向传播（back-propagating error）错误学习表征
 
 ### 随机梯度下降（SGD：Stochastic Gradient Descent）
 
@@ -24,6 +17,13 @@
 论文：用于在线学习和随机优化的自适应次梯度方法（Adaptive Subgradient Methods for Online Learning and Stochastic Optimization）
 技术博客：斯坦福CS231n：优化算法（http://cs231n.github.io/neural-networks-3/）
 技术博客：梯度下降优化算法概述（http://sebastianruder.com/optimizing-gradient-descent/）
+
+### 动量（Momentum）
+
+动量是梯度下降算法（Gradient Descent Algorithm）的扩展，可以加速和阻抑参数更新。在实际应用中，在梯度下降更新中包含一个动量项可在深度网络中得到更好的收敛速度（convergence rate）。
+
+论文：通过反向传播（back-propagating error）错误学习表征
+
 
 
 ### Adadelta
