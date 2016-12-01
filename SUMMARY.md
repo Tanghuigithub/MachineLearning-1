@@ -26,6 +26,7 @@
    * [keras](keras.md)
    * [Theano](theano.md)
    * [caffe](caffe.md)
+   * layer
 * [第4章 深度学习探索](deeplearning.md)
    * [Attention](attention.md)
    * [word2vec](word2vec.md)
