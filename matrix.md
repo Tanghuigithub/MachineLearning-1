@@ -6,7 +6,6 @@
 
 Dimension of matrix : number of rows\(行\) x number of columns\(列\)
 
-  
 $$\left(
   \begin{array}{cccc}
     a{11} & a{12} & \ldots & a{1n} \\
@@ -17,6 +16,8 @@ $$\left(
 \right)$$
 
 $$a_{ij}$$ :  第$$ i $$行，第$$ j $$列
+
+常用大写字母表示矩阵，小写表示向量
 
 ### 0.4.2 向量の定義
 
