@@ -149,40 +149,38 @@ $$2\cdot \left(
    \end{array}
 \right)$$
 
-行列同士を掛けるときは、左側のベクトルについては左から右に、右側のベクトルについては上から下に向けて数を選び、要素同士の積を足していきます。そのため左側のベクトルの列数と右側のベクトルの行数が一致しないと掛け算を行うことはできません。この説明では分からないと思うので例を見てください。
-
 例:  
-$$\left\(  
-  \begin{array}{ccc}  
-    2 & 3 & 4\  
-    5 & 6 & 7  
-   \end{array}  
-\right\) \cdot  
-\left\(  
-  \begin{array}{cc}  
-    1 & 2 \  
-    3 & 4 \  
-    5 & 6  
-   \end{array}  
- \right\) =  
- \left\(  
-   \begin{array}{cc}  
-     2\cdot 1+3\cdot 3+4\cdot 5 & 2\cdot 2+3\cdot 4+4\cdot 6 \  
-     5\cdot 1+6\cdot 3+7\cdot 5 & 5\cdot 2+6\cdot 4+7\cdot 6  
-    \end{array}  
-  \right\) \  
-  =\left\(  
-    \begin{array}{cc}  
-      31 & 40 \  
-      58 & 76  
-     \end{array}  
-   \right\)
+$$\left(
+  \begin{array}{ccc}
+    2 & 3 & 4\\
+    5 & 6 & 7
+   \end{array}
+\right) \cdot
+\left(
+  \begin{array}{cc}
+    1 & 2 \\
+    3 & 4 \\
+    5 & 6
+   \end{array}
+ \right) =
+ \left(
+   \begin{array}{cc}
+     2\cdot 1+3\cdot 3+4\cdot 5 & 2\cdot 2+3\cdot 4+4\cdot 6 \\
+     5\cdot 1+6\cdot 3+7\cdot 5 & 5\cdot 2+6\cdot 4+7\cdot 6
+    \end{array}
+  \right) \\
+  =\left(
+    \begin{array}{cc}
+      31 & 40 \\
+      58 & 76
+     \end{array}
+   \right)$$
 
+**prediction = Datamatrix x Parameters**
 
-$$
-行数と列数が同じ行列（正方行列）では繰り返し掛け算を行うことができ、Aを$$n$$回掛けて得られる行列を$$A^n$$と書きます。
+$$行数と列数が同じ行列（正方行列）では繰り返し掛け算を行うことができ、Aを$$n$$回掛けて得られる行列を$$A^n$$と書きます。
 
-行列の基本演算について、$$A+B=B+A$$のような普通の数の計算で成り立つ法則はだいたい成り立ちますが、$$AB = BA$$**とは限らない**ことに注意してください。そもそも$$AB$$が計算できても$$BA$$が計算できない場合もあります。
+行列の基本演算について、$$A+B=B+A$$のような普通の数の計算で成り立つ法則はだいたい成り立ちますが、$$AB = BA$$ **とは限らない**ことに注意してください。そもそも$$AB$$が計算できても$$BA$$が計算できない場合もあります。
 
 ### 0.4.4 いろいろな行列
 
@@ -196,9 +194,7 @@ $$ \left(
      &  & \ddots &  \\
     0 & 0 & \ldots & 1
   \end{array}
- \right)
-$$
-
+ \right)$$$$
 
 のような行列を**単位行列**と言います。単位行列は記号$$E$$で表すことが多いです。
 
