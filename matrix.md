@@ -178,11 +178,23 @@ $$\left(
 
 **prediction = Datamatrix x Parameters**
 
-Assiciative\(结合律\)，但不能交换
+Assiciative\(结合律\)，not commutative\(in generral excpet one of them is identity matrix\).
+
+**Identity Matrix**
+
+$$A_{m\times n}\cdot I_{n\times n}=I_{m\times m}\cdot A_{m\times n}=A_{m\times n}$$
 
 $$行数と列数が同じ行列（正方行列）では繰り返し掛け算を行うことができ、Aを$$n$$回掛けて得られる行列を$$A^n$$と書きます。
 
 行列の基本演算について、$$A+B=B+A$$のような普通の数の計算で成り立つ法則はだいたい成り立ちますが、$$AB = BA$$ **とは限らない**ことに注意してください。そもそも$$AB$$が計算できても$$BA$$が計算できない場合もあります。
+
+### \#\# Inverse Matrix
+
+Only **square matrix** have an inverse .
+
+$$A_{m\times m}\cdot A^{-1}_{m\times m}=A^{-1}_{m\times m}\cdot A_{m\times m}=I_{m\times m}$$
+
+Matrix that don't have an inverse are "singular" or "degenerate".
 
 ### 0.4.4 いろいろな行列
 
@@ -196,7 +208,7 @@ $$ \left(
      &  & \ddots &  \\
     0 & 0 & \ldots & 1
   \end{array}
- \right)$$$$
+ \right)$$
 
 のような行列を**単位行列**と言います。単位行列は記号$$E$$で表すことが多いです。
 
@@ -204,22 +216,22 @@ $$ \left(
 $$ AA^{-1}=A^{-1}A=E $$
 
 行列$$A$$に対して、行と列を入れ替えたものを転置行列と呼び、$$A^T$$と書きます。  
-$$\left\(  
-  \begin{array}{cccc}  
-    a_{11} & a_{12} & \ldots & a_{1n} \  
-    a_{21} & a_{22} & \ldots & a_{2n} \  
-    \vdots & \vdots & \ddots & \vdots \  
-    a_{m1} & a_{m2} & \ldots & a_{mn}  
-  \end{array}  
-  \right\)^T =  
-  \left\(  
-    \begin{array}{cccc}  
-      a_{11} & a_{21} & \ldots & a_{m1} \  
-      a_{1n} & a_{22} & \ldots & a_{m2} \  
-      \vdots & \vdots & \ddots & \vdots \  
-      a_{1n} & a_{2n} & \ldots & a_{mn}  
-    \end{array}  
-    \right\)
+$$\left(
+  \begin{array}{cccc}
+    a{11} & a{12} & \ldots & a{1n} \\
+    a{21} & a{22} & \ldots & a{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a{m1} & a{m2} & \ldots & a{mn}
+  \end{array}
+  \right)^T =
+  \left(
+    \begin{array}{cccc}
+      a{11} & a{21} & \ldots & a{m1} \\
+      a{1n} & a{22} & \ldots & a{m2} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a{1n} & a{2n} & \ldots & a{mn}
+    \end{array}
+    \right)$$
 
 
 $$

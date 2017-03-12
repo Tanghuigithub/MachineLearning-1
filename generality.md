@@ -25,6 +25,8 @@ The mean is halved（$$\frac 12$$）as a convenience for the computation of the 
 论文：分批标准化：通过减少内部协变量位移（Covariate Shift）加速深度网络训练（Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift）  
 论文：使用分批标准化的循环神经网络（Batch Normalized Recurrent Neural Networks）
 
+Two techniques to help with this are **feature scaling **and **mean normalization**. Feature scaling involves dividing the input values by the range \(i.e. the maximum value minus the minimum value\) of the input variable, resulting in a new range of just 1. Mean normalization involves subtracting the average value for an input variable from the values for that input variable resulting in a new average value for the input variable of just zero. To implement both of these techniques, adjust your input values as shown in this formula:
+
 ## 经验风险最小化
 
 ## 正则化/结构风险最小化
