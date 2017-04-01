@@ -25,15 +25,45 @@
 * It damps oscillation in directions of high curvature by combining gradients with opposite signs.
 * It builds up speed in directions with a gentle but consistent gradient.
 
-$v\(t\)=\alpha v\(t-1\)-\eta \frac {\partial E}{\partial w}\(t\)$
+$$\mathrm v(t)=\alpha \mathrm v(t-1)-\varepsilon \frac {\partial E}{\partial \mathrm w}(t)$$
 
+* increment the previous velocity
+* decays by momentum $$\alpha(\alpha<1)$$ 
 
+$$\Delta \mathrm w(t)=\mathrm v(t)=\alpha \Delta \mathrm w(t-1)-\varepsilon \frac {\partial E}{\partial \mathrm w}(t)$$
+
+terminal velocity:$$\frac 1{1-\alpha}(-\varepsilon \frac{\partial E}{\partial \mathrm w})$$
+
+$$\alpha=0.9$$ correspond to multiplying the maximum speed by 10 relative to the gradient descent algorithm. 
+
+It is less important to adapt $$\alpha$$ over time than to shrink $$\varepsilon$$ over time.
+
+#### Nesterov Momentum
+
+First make a jump
+
+Then measure the gradient, make a correction.
+
+"It turns out ,if you're going to gamble, it's much better to gamble and then make a correction, than to make a correction and then gamble.
 
 论文：通过反向传播（back-propagating error）错误学习表征
 
 ### Adadelta
 
-Adadelta 是一个基于梯度下降的学习算法，可以随时间调整适应每个参数的学习率。它是作为 Adagrad 的改进版提出的，它比超参数（hyperparameter）更敏感而且可能会太过严重地降低学习率。Adadelta 类似于 rmsprop，而且可被用来替代 vanilla SGD。
+ Adadelta 是一个基于梯度下降的学习算法，可以随时间调整适应每个参数的学习率。它是作为 Adagrad 的改进版提出的，它比超参数（hyperparameter）更敏感而且可能会太过严重地降低学习率。Adadelta 类似于 rmsprop，而且可被用来替代 vanilla SGD。
+
+To determine the individual learning rates:
+
+* Start with a local gain of 1 for every weight.
+* $$+\delta$$ : Increase the local gain if the gradient for that weight does not change sign.
+* $$\times(1-\delta)$$ : Use small additive increases and multiplicative decreases.
+
+Tricks:
+
+* Limit the gains to lie in some reasonable range.
+* Use full batch learning or very big mini-batches.
+* Adaptive learning rates can be combined with momentum.
+* Adaptive learning rates only deal with axis-aligned effects.
 
 论文：Adadelta：一种自适应学习率方法（ADADELTA: An Adaptive Learning Rate Method）  
 技术博客：斯坦福 CS231n：优化算法（[http://cs231n.github.io/neural-networks-3/）](http://cs231n.github.io/neural-networks-3/）)  
@@ -57,6 +87,22 @@ Adam 是一种类似于 rmsprop 的自适应学习率算法，但它的更新是
 ### RMSProp
 
 RMSProp 是一种基于梯度的优化算法。它与 Adagrad 类似，但引入了一个额外的衰减项抵消 Adagrad 在学习率上的快速下降。
+
+* The magnitude of the gradient can be very different for different weights and can change during learning.
+  * This makes it hard to choose a single global learning rate.
+* For **full batch learning**, we can deal with this variation by only using the sign of the gradient.
+
+rprop: This combines the idea of only using the sign of the gradient with the idea of adapting the step size separately for each weight.
+
+RMSProp: A mini-batch version of rprop
+
+* Keep a moving average of the squared gradient for each weight
+
+$$MeanSquare(w,t)=0.9 MeanSquare(w,t-1)+0.1(\frac {\partial E}{\partial w}(t))^2$$
+
+* Dividing the gradient by $$\sqrt{MeanSquare(w,t)}$$ makes the learning work much better.
+
+
 
 PPT：用于机器学习的神经网络 讲座6a  
 技术博客：斯坦福CS231n：优化算法（[http://cs231n.github.io/neural-networks-3/）](http://cs231n.github.io/neural-networks-3/）)  
