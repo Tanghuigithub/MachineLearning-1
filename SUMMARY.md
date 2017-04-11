@@ -8,6 +8,7 @@
   * [积分](integral.md)
   * [矩阵](matrix.md)
   * [概率](probability.md)
+  * [Metrics](metrics.md)
   * [距离](distance.md)
   * [术语](term.md.md)
 * [第1章 基础知识](basic.md)
