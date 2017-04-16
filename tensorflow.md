@@ -1,13 +1,7 @@
-## TensorFlow
+# TensorFlow
 
 TensorFlow是一个开源 C ++ / Python 软件库，用于使用数据流图的数值计算，尤其是深度神经网络。它是由谷歌创建的。在设计方面，它最类似于 Theano，但比  Caffe 或 Keras 更低级。
 
-# Tensorflow Step by Step
-
-标签（空格分隔）： 深度学习
-
----
-[TOC]
 
 ## 第一步很重要：session
 
