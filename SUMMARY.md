@@ -27,6 +27,7 @@
 * [第3章 神经网络编程](nnpractice.md)
   * [keras](keras.md)
   * [Theano](theano.md)
+  * [Tensorflow](tensorflow.md)
   * [caffe](caffe.md)
   * [layer](layer.md)
   * [matlab](matlab.md)
