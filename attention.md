@@ -35,11 +35,14 @@ soft-align：在进行翻译时，虽然语序会变，但大体的语义部分�
 ### Approach
 
 新模型**RNNsearch**：
-对每一个target word $y_i$,都计算一个context vector $c_i$——用softmax刻画“expected annotation”。$y_i$究竟对应哪一个annotation，可以看成一种分布（多分类），这样就可以用一个权重/概率的期望来刻画。
+对每一个target word $$y_i$$,都计算一个context vector $$c_i$$——用softmax刻画“expected annotation”。$$y_i$$究竟对应哪一个annotation，可以看成一种分布（多分类），这样就可以用一个权重/概率的期望来刻画。
 $$
 \alpha_{ij}=\frac{\exp(e_{ij})}{\sum_{k=1}^{T_x}\exp(e_{ik})}
 $$
 - 对齐（Align）与翻译同时进行。
+
+
+
 
 ### 2. Image Caption
 
