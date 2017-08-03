@@ -120,6 +120,10 @@ for i in range(num_steps):
 final_state = state
 ```
 
+### Dynamic RNN decoder
+for a sequence-to-sequence model specified by RNNCell and decoder function.
+is similar to the tf.python.ops.rnn.dynamic_rnn as the decoder does not make any assumptions of sequence length and batch size of the input.
+
 ### Input
 
 ```

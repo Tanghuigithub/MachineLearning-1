@@ -9,11 +9,11 @@ Quadratic programming,二次规划
 1.无约束优化问题：$$\min f(x)$$
 求导，令等于0，在候选中取最优；如果是凸函数，可保证是最优解。
 2.有等式约束的优化问题：
-$$\min f(x)  \\
+$$\min f(x)  \
 s.t. h_i(x)=0;i=1,\dots ,n$$
 拉格朗日乘子法
 3.有不等式约束的优化问题：
-$$\min f(x)  \\
+$$\min f(x)  \
 s.t. g_i(x) \leq 0;i=1,\dots ,n\\h_j(x)=0;j=1,\dots ,m$$
 KKT条件
 
