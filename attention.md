@@ -157,8 +157,7 @@ pre_encoder\_inputs, output\_state\_fw, output\_state\_bw = tf.nn.bidirectional\
 ```
 
 
-
-\`\`\``
+```
 encoder\_inputs = \[e\*f for e, f in zip\(pre\_encoder\_inputs, encoder\_masks\[:seq\_length\]\)\]
 
 ```
@@ -180,10 +179,7 @@ initial\_state = concate\(output\_state\_fw, output\_state\_bw\)
 
 初始化：
 
-
-
 - memory state 
-
 - hidden state
 
  
