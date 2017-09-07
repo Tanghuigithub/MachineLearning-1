@@ -90,7 +90,7 @@ Softmax 函数通常被用于将原始分数（raw score）的矢量转换成用
   $$
   \frac { ∂ }{ ∂{ a }_{ k } } { L }_{ NLL }(p,y)=(p-{e}_{y})
   $$
-
+![](/assets/softmax.jpg)
 
   ### ReLU
 

@@ -45,6 +45,6 @@
   * [STD](ying-yong/yu-yin/std.md)
 * [安全](ying-yong/an-quan.md)
   * [恶意代码检测](ying-yong/an-quan/e-yi-dai-ma-jian-ce.md)
-  * 自动漏洞挖掘
+  * [自动漏洞挖掘](ying-yong/an-quan/zi-dong-lou-dong-wa-jue.md)
   * 自动漏洞挖掘
 
