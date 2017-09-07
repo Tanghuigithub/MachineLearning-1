@@ -42,7 +42,7 @@
 ## 应用
 
 * [语音](ying-yong/yu-yin.md)
-  * STD
+  * [STD](ying-yong/yu-yin/std.md)
 * [安全](ying-yong/an-quan.md)
   * [恶意代码检测](ying-yong/an-quan/e-yi-dai-ma-jian-ce.md)
   * 自动漏洞挖掘
