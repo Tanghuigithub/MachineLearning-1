@@ -1,5 +1,7 @@
 # Summary
 
+## 基础
+
 * [Introduction](README.md)
 * [第0章 数学准备](chapter1.md)
   * [待整理](inbox0.md)
@@ -36,4 +38,11 @@
   * [word2vec](word2vec.md)
   * [AlphaGo](alphago.md)
   * [Terms](termsmd.md)
+
+## 应用
+
+* [语音](ying-yong/yu-yin.md)
+  * STD
+* [安全](ying-yong/an-quan.md)
+  * 恶意代码检测
 
