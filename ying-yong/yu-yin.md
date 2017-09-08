@@ -19,7 +19,3 @@ MFCC是浅层特征，只要通过语音本身的分析就能得到，但不同�
 ![](/assets/屏幕快照 2017-04-15 17.06.32.png)
 
 
-  [10]: http://people.csail.mit.edu/hubert/pyaudio/
-  [11]: http://noalgo.info/874.html
-  [12]: http://ffmpeg.org/
-  [13]: http://static.zybuluo.com/sixijinling/dqrsl1v3drulfhte0y5zvjb2/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-04-03%2011.38.21.png

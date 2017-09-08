@@ -20,12 +20,13 @@
 
 ### 检索
 
-有了是上述音频特征后，就可以对两个不同音频进行检索，最大相似度的地方就是相似点。需要指出的是，这种技术最适用于录音片段的检索，如若音频内容相同但演绎方式不同（提取的特征点不同）则无法有效识别。
+有了上述音频特征后，就可以对两个不同音频进行检索，最大相似度的地方就是相似点。需要指出的是，这种技术最适用于录音片段的检索，如若音频内容相同但演绎方式不同（提取的特征点不同）则无法有效识别。
 
 ## 实践
 
 这里仍以_dejavu_为例，通过具体代码实现整个流程。详情可参考[Audio Fingerprinting
-with Python and Numpy](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)。
+with Python and Numpy](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)。区别于原歌曲检索的应用，这里尝试应用于中文录音的相似音频检索中。
+
 ### 环境
 
 - `pyaudio` ：[官网][10]for grabbing audio from microphone
@@ -38,12 +39,16 @@ with Python and Numpy](http://willdrevo.com/fingerprinting-and-audio-recognition
 - `matplotlib`:
     - dateutil 2.0
 
-## Sentence Segmentation
+### 数据预处理
+这里使用的是两个人相同文本的录音频谱，可以看到断句不大一样。
+完成了分句，提取了单句话不同人的版本，语速、重音都不一样，但频谱图能看出一些关联。![](/assets/10-LuoLing-2016110814.e6fae055bd0a41e28aee16e870c1a80b.pdf)
 ![频谱对比][13]
-断句不大一样
-### pydub.AudioSegment()
 
-```
+#### 句子分割
+
+ 首先将长段的句子分割成短句子，这里使用的是 `pydub.AudioSegment()`利用句子之间的短暂安静来分句。因此，首先要做的是归一化音频的强度（amplitude）。
+
+```python
 # make audio file to be the same average amplitude 
 normalized_sound = match_target_amplitude(sound, -20.0)
 # must be silent for at least half a second
@@ -52,9 +57,13 @@ min_silence_len=500
 silence_thresh=-40
 ```
 
-## Peak Finding
+## 提取峰值特征
 
-![此处输入图片的描述][14]
+对于同一个短句，可以看到因为语调、语速的等原因，提取到的特征点并不相似。
+
+![屏幕快照 2017-04-05 10.38.53.png-1092.9kB][9]
+
+这种利用峰值出现的（time，frequency）坐标进行hash的方法对**时间的对齐**应该有一定程度依赖。
 
 > limit：决定是否对整个track进行fingerprint 
 DEFAULT_WINDOW_SIZE = 4096 * 16
@@ -197,4 +206,18 @@ Normalized distance between the origin sound and segment/man/food2-cut1-chunk7.w
 Normalized distance between the origin sound and segment/man/food2-cut1-chunk8.wav: 88.700106
 Normalized distance between the origin sound and segment/man/food2-cut1-chunk9.wav: 71.750063
 ```
+## 其他研究
+论文_Robust Audio Hashing for Content Identification_
 
+- 先做framing，傅里叶变换得到频谱。
+- 划分frequency band（300-3000Hz），分别计算energy，由相邻band的energy之间的关系计算一个bit。共32个band，于是得到32bit的Hash值。
+
+
+ ![屏幕快照 2017-09-08 10.50.19.png-1400.4kB][14]
+[9]: http://static.zybuluo.com/sixijinling/uz2bu1hah0pj29rhzuo4x8uf/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-04-05%2010.38.53.png
+
+[10]: http://people.csail.mit.edu/hubert/pyaudio/
+[11]: http://noalgo.info/874.html
+[12]: http://ffmpeg.org/
+[13]: http://static.zybuluo.com/sixijinling/dqrsl1v3drulfhte0y5zvjb2/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-04-03%2011.38.21.png
+[14]: http://static.zybuluo.com/sixijinling/hznjeb0158ymxrs1h3803wgm/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-09-08%2010.50.19.png
