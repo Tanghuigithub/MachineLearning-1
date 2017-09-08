@@ -1,8 +1,19 @@
 ## 音频对比技术
-音频对比 
 
-参考案例[dejavu](https://github.com/worldveil/dejavu)
+音频对比主要是从音频信号中提取特征，通过特征进行比对来检索。
 
+参考案例[dejavu](https://github.com/worldveil/dejavu)。
+
+### 特征提取
+
+图中提取的过程就是通过频谱最大值点来建模。
+
+![](http://willdrevo.com/public/img/posts/dejavu-post/spectrogram_peaks.png)
+
+### 特征构建
+
+在完成最大值点的提取后，需要进行特征的构建
+![](http://willdrevo.com/public/img/posts/dejavu-post/spectrogram_zoomed.png)
 ## Environment
 
 - `pyaudio` ：[官网][10]for grabbing audio from microphone
