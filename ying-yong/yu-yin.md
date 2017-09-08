@@ -18,4 +18,8 @@ MFCC是浅层特征，只要通过语音本身的分析就能得到，但不同�
 ![](/assets/屏幕快照 2017-04-15 16.50.01.png)
 ![](/assets/屏幕快照 2017-04-15 17.06.32.png)
 
+## Dataset
+
+[Librispeech][10]
+  [10]: http://www.danielpovey.com/files/2015_icassp_librispeech.pdf
 
