@@ -12,9 +12,21 @@
 
 ### 特征构建
 
-在完成最大值点的提取后，需要进行特征的构建
+在完成最大值点的提取后，需要进行特征的构建。
+
 ![](http://willdrevo.com/public/img/posts/dejavu-post/spectrogram_zoomed.png)
-## Environment
+
+特征是通过最大值点之间的距离来建模，例如本案例中就采用的是两个最大值点的距离、位置信息作为一个固定的特征作为音频特征信息。
+
+### 检索
+
+有了是上述音频特征后，就可以对两个不同音频进行检索，最大相似度的地方就是相似点。需要指出的是，这种技术最适用于录音片段的检索，如若音频内容相同但演绎方式不同（提取的特征点不同）则无法有效识别。
+
+## 实践
+
+这里仍以_dejavu_为例，通过具体代码实现整个流程。详情可参考[Audio Fingerprinting
+with Python and Numpy](http://willdrevo.com/fingerprinting-and-audio-recognition-with-python/)。
+### 环境
 
 - `pyaudio` ：[官网][10]for grabbing audio from microphone
 - `ffmpeg`[安装][11]：[官网][12]for converting audio files to .wav format
