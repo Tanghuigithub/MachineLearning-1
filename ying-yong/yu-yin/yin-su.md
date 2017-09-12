@@ -3,6 +3,7 @@
 采集了16人（8男8女）的语音数据
 
 ## DTW
+
 Matlab上dtw的效果：
 ![dtw.jpg-40.8kB][1]
 
@@ -25,6 +26,27 @@ Matlab上dtw的效果：
 > - 1.1G
 > - dev+valid
 
+### 后验概率
+基于DTW的语音关键词检出http://jst.tsinghuajournals.com/CN/rhhtml/20170104.html
+从上面的ROC图来看，还有很大提升空间。在尝试提取音素后验概率作为特征：
+英文音素效果：
+![roc_result.png-124.4kB][3]
+2017.8.14 中文音素改進：
+![roc_cn_result.png-123.8kB][4]
+#### CTC的tensorflow实现
+#### ctc_loss
+```
+ctc_loss(
+    labels,
+    inputs,
+    sequence_length,
+    preprocess_collapse_repeated=False,
+    ctc_merge_repeated=True,
+    ignore_longer_outputs_than_inputs=False,
+    time_major=True
+)
+```
+最好用named argument
 
 ### 后验特征
 
@@ -57,5 +79,7 @@ $$
 R(P(Q,D),u)=\frac 1K \sum_{k=1}^K r(q_i,d_j,u)
 $$
   [1]: http://static.zybuluo.com/sixijinling/u36pwzvzmk8lqxp1sszwxo91/dtw.jpg
+  [3]: http://static.zybuluo.com/sixijinling/k3qqkx2un8aucd9ntzkd3ac0/roc_result.png
+  [4]: http://static.zybuluo.com/sixijinling/u3638nl6ck4q3145kkvuomiv/roc_cn_result.png
   [5]: http://speech.fit.vutbr.cz/software/quesst-2014-multilingual-database-query-by-example-keyword-spotting
   [6]: http://static.zybuluo.com/sixijinling/ynzwvhqqkceam69ye1g3scb0/phoneme.png
