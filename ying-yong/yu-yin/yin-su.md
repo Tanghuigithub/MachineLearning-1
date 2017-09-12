@@ -1,3 +1,11 @@
+# 音素识别
+
+采集了16人（8男8女）的语音数据
+
+## DTW
+Matlab上dtw的效果：
+![dtw.jpg-40.8kB][1]
+
 #### Quesst
 
 跑通了上周提到的完成QUESST任务的一个项目，其使用的是BUT大学提供的`phnrec`工具来提取音素后验概率（音素模型是已经训练好的）。目前在Quesst数据集上跑通了，利用`phnrec`提取了自己采集的数据集的后验概率，之后还要进一步探索。
@@ -48,6 +56,6 @@ $$
 $$
 R(P(Q,D),u)=\frac 1K \sum_{k=1}^K r(q_i,d_j,u)
 $$
-
+  [1]: http://static.zybuluo.com/sixijinling/u36pwzvzmk8lqxp1sszwxo91/dtw.jpg
   [5]: http://speech.fit.vutbr.cz/software/quesst-2014-multilingual-database-query-by-example-keyword-spotting
   [6]: http://static.zybuluo.com/sixijinling/ynzwvhqqkceam69ye1g3scb0/phoneme.png

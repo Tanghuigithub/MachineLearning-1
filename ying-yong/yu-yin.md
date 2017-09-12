@@ -3,6 +3,7 @@
 
 
 ## MFCC（梅尔频率倒谱系数）
+决定尝试新的特征提取方法[MFCC]，和上面那篇论文一样是基于能量分布来提特征，常应用在语音识别。
 ### Mel scale
 
 The Mel scale relates perceived frequency, or pitch, of a pure tone to its actual measured frequency. Humans are much better at discerning small changes in pitch at low frequencies than they are at high frequencies. Incorporating this scale makes our features match more closely what humans hear.
