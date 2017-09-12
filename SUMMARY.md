@@ -45,6 +45,7 @@
   * [应用于安全领域的语音技术](ying-yong/yu-yin/ying-yong-yu-an-quan-ling-yu-de-yu-yin-ji-zhu.md)
   * [内容无关](ying-yong/yu-yin/std.md)
   * [内容相关](ying-yong/yu-yin/yin-su.md)
+  * [待整理](ying-yong/yu-yin/dai-zheng-li.md)
 * [安全](ying-yong/an-quan.md)
   * [恶意代码检测](ying-yong/an-quan/e-yi-dai-ma-jian-ce.md)
   * [脆弱性检测](ying-yong/an-quan/zi-dong-lou-dong-wa-jue.md)
