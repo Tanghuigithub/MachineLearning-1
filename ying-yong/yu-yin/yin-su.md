@@ -11,6 +11,10 @@ QbyE-STD目前通常有３种实现方法[３４].
 - 基于经典的模板匹配的思路,采用动态时间规整(dynamictimewarping,DTW)[６１３]将查询样例和待查语句进行匹配.由于查询语句的时长通常远远大于样例时长,因此需要在语句上进行**滑动查找**,常用策略包括Segmental-DTW[８]、Subsequence-DTW
 [１４]、SLN-DTW (segmental local normalized-DTW)[１５]等.
 
+查询样例转换成音素序列后怎么查找
+- 网格？
+- 音素边界
+
 ## 少资源语言关键词检出评测(QUESST)
 
 跑通了上周提到的完成QUESST任务的一个项目，其使用的是BUT大学提供的`phnrec`工具来提取音素后验概率（音素模型是已经训练好的）。目前在Quesst数据集上跑通了，利用`phnrec`提取了自己采集的数据集的后验概率，之后还要进一步探索。
@@ -31,18 +35,25 @@ QbyE-STD目前通常有３种实现方法[３４].
 > - 1.1G
 > - dev+valid
 
-# 音素识别
+Query-by-example spoken term detection (QbE-STD) involves
+two main modules: 
+1. feature extraction （已解决）
+2. detection by dynamic time warping.
 
-采集了16人（8男8女）的语音数据
+输入是spoken query和audio segment，输出audio segment是否包含该query。
 
-## DTW
+# 数据集介绍
 
-Matlab上dtw的效果：
-![dtw.jpg-40.8kB][1]
+采集了16人（8男8女）的语音数据，共20句话，截选自《小王子》。
 
+
+
+## Feature extraction
 
 ### 后验概率
-基于DTW的语音关键词检出http://jst.tsinghuajournals.com/CN/rhhtml/20170104.html
+
+The initial step was to run unconstrained phonetic recog- nition on all audio and extract frame-wise posterior prob- ability of phonemes.
+基于DTW的语音关键词检出http://jst.tsinghuajournals.com/CN/rhhtml/20170104.htm
 从上面的ROC图来看，还有很大提升空间。在尝试提取音素后验概率作为特征：
 英文音素效果：
 ![roc_result.png-124.4kB][3]
@@ -93,6 +104,52 @@ $$
 $$
 R(P(Q,D),u)=\frac 1K \sum_{k=1}^K r(q_i,d_j,u)
 $$
+
+## 实验设置
+
+在数据集上对上述3种策略进行了关键词检出测试，采用的语音特征包括：
+
+1. MFCC：39维
+2. EN音素后验
+3. CN音素后验
+
+### MFCC
+使用MFCC特征来计算DTW，根据输出的结果计算的ROC图：
+
+![roc_out.png-105.9kB][2]
+
+发现在不同人之间差别比较大，比如下面的`01`代表第一句话，huang所说的01和所有人说的01计算距离的话浮动很大，尽管在另一个人说的全部20句话中，huang所说的01和另一个人01的距离是最小的：
+```
+boy_huang_01.wav,boy_liubingnan_01.wav,72.6871660638
+boy_huang_01.wav,boy_lu_01.wav,75.8904701408
+boy_huang_01.wav,boy_meng_01.wav,63.3867188977
+boy_huang_01.wav,boy_wanglei_01.wav,107.501702788
+boy_huang_01.wav,boy_zhang_01.wav,66.6690807097
+boy_huang_01.wav,girl_chenjingjie_01.wav,101.776886946
+boy_huang_01.wav,girl_chenxi_01.wav,95.786444278
+boy_huang_01.wav,girl_dong_01.wav,68.7827225926
+boy_huang_01.wav,girl_guojingyi_01.wav,98.9626036893
+boy_huang_01.wav,girl_linyan_01.wav,104.338175707
+```
+不确定是否需要一些标准化的措施。
+
+## Detection by dynamic time warping
+
+Variants of dynamic time warping (DTW) have been used to
+align two sequences of acoustic features for various tasks, such
+as speech pattern discovery [1, 2, 3, 19, 20, 21], story segmentation
+[5] and speech summarization [22]. In this paper, to match
+通常音素后验的local distance定义为the negative log of inner product.
+
+$$
+\rho(x_i,y_j)=-\log(x_i\cdot y_j)
+$$
+Matlab上dtw的效果：
+![dtw.jpg-40.8kB][1]
+
+
+
+[2]: http://static.zybuluo.com/sixijinling/2owqberz9bis8rup6y9mbsp1/roc_out.png
   [1]: http://static.zybuluo.com/sixijinling/u36pwzvzmk8lqxp1sszwxo91/dtw.jpg
   [3]: http://static.zybuluo.com/sixijinling/k3qqkx2un8aucd9ntzkd3ac0/roc_result.png
   [4]: http://static.zybuluo.com/sixijinling/u3638nl6ck4q3145kkvuomiv/roc_cn_result.png

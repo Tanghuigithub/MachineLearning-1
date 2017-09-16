@@ -215,31 +215,7 @@ Normalized distance between the origin sound and segment/man/food2-cut1-chunk9.w
 
 
  ![屏幕快照 2017-09-08 10.50.19.png-1400.4kB][14]
- 
- ## 特征：
 
-### MFCC
-使用MFCC特征来计算DTW，根据输出的结果计算的ROC图：
-
-![roc_out.png-105.9kB][2]
-
-发现在不同人之间差别比较大，比如下面的`01`代表第一句话，huang所说的01和所有人说的01计算距离的话浮动很大，尽管在另一个人说的全部20句话中，huang所说的01和另一个人01的距离是最小的：
-```
-boy_huang_01.wav,boy_liubingnan_01.wav,72.6871660638
-boy_huang_01.wav,boy_lu_01.wav,75.8904701408
-boy_huang_01.wav,boy_meng_01.wav,63.3867188977
-boy_huang_01.wav,boy_wanglei_01.wav,107.501702788
-boy_huang_01.wav,boy_zhang_01.wav,66.6690807097
-boy_huang_01.wav,girl_chenjingjie_01.wav,101.776886946
-boy_huang_01.wav,girl_chenxi_01.wav,95.786444278
-boy_huang_01.wav,girl_dong_01.wav,68.7827225926
-boy_huang_01.wav,girl_guojingyi_01.wav,98.9626036893
-boy_huang_01.wav,girl_linyan_01.wav,104.338175707
-```
-不确定是否需要一些标准化的措施。
-
-
-[2]: http://static.zybuluo.com/sixijinling/2owqberz9bis8rup6y9mbsp1/roc_out.png
 [9]: http://static.zybuluo.com/sixijinling/uz2bu1hah0pj29rhzuo4x8uf/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-04-05%2010.38.53.png
 
 [10]: http://people.csail.mit.edu/hubert/pyaudio/
