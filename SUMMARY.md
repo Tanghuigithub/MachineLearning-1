@@ -15,6 +15,7 @@
   * [术语](term.md.md)
 * [第1章 基础知识](basic.md)
   * [方法概论](generality.md)
+  * [预处理](preprocess.md)
   * [贝叶斯](bayesian.md)
   * [优化算法](optimizer.md)
   * [支持向量机](svm.md)
