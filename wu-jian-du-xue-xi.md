@@ -42,3 +42,8 @@ RBM也相当于一个编解码器 :
 2. 根据y的值计算概率$$p(v=1|h)$$，其中h的取值就是y的值； 
 3. 按照均匀分布产生一个0到1之间的随机浮点数，如果它小于$$p(v=1|h)$$，v的取值就是1，否则就是0； 
 4. 得到解码后的样本x。 
+
+## Reference
+
+- Hopfield Network：[ http://page.mi.fu-berlin.de/rojas/neural/chapter/K13.pdf ]
+- [ http://www.scholarpedia.org/article/Boltzmann_machine ]
