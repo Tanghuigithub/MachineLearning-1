@@ -12,7 +12,7 @@ $$
 $$
 
 
-McCulloch-Pitts接着提出了二值的，必须达到阈值才发送一定量的冲激。
+McCulloch-Pitts接着提出了二值的，必须达到阈值才发送一定量的冲激函数。
 
 之后的Rectified Linear Neurons\(Linear threshold neuron\)超出阈值的部分仍是线性的。
 
@@ -26,7 +26,7 @@ Simoid neurons可以说是用连续函数版的二值，通常使用Logistic函�
 
 * **motivation**: to compose _simple transformations_ in order to obtain 
   _highly non-linear_ ones
-* \(MLPs compose affine transformations and element-wise non-linearities\)
+* (MLPs compose affine transformations and element-wise non-linearities)
 * hyperbolic tangent activation functions:
 
   $$
@@ -37,7 +37,7 @@ Simoid neurons可以说是用连续函数版的二值，通常使用Logistic函�
 * the input of the neural net: $${ h }^{ 0 }=x$$
 * theoutputofthe k-th hidden layer: $${ h }^{ k }$$
 
-* affine transformation $$a = b+Wx$$ \, elementwise
+* affine transformation $$a = b+Wx$$, elementwise
 
 
   $$
@@ -64,7 +64,7 @@ Simoid neurons可以说是用连续函数版的二值，通常使用Logistic函�
 
   ###### Maxout
 
-* the structure \(also called architecture\) of the family of input-output functions can be varied in many ways: 
+* the structure (also called architecture) of the family of input-output functions can be varied in many ways: 
   _convolutional networks_, 
   _recurrent networks_
 
@@ -92,9 +92,9 @@ Softmax 函数通常被用于将原始分数（raw score）的矢量转换成用
   $$
 ![](/assets/softmax.jpg)
 
-  ### ReLU
+### ReLU
 
-即线性修正单元（Rectified Linear Unit）。ReLU 常在深度神经网络中被用作激活函数。它们的定义是 f\(x\) = max\(0, x\) 。ReLU 相对于 tanh 等函数的优势包括它们往往很稀疏（它们的活化可以很容易设置为 0），而且它们受到梯度消失问题的影响也更小。ReLU 主要被用在卷积神经网络中用作激活函数。ReLU 存在几种变体，如Leaky ReLUs、Parametric ReLU \(PReLU\) 或更为流畅的 softplus近似。
+即线性修正单元（Rectified Linear Unit）。ReLU 常在深度神经网络中被用作激活函数。它们的定义是 $$f(x) = \max(0, x)$$ 。ReLU 相对于 tanh 等函数的优势包括它们往往很稀疏（它们的活化可以很容易设置为 0），而且它们受到梯度消失问题的影响也更小。ReLU 主要被用在卷积神经网络中用作激活函数。ReLU 存在几种变体，如Leaky ReLUs、Parametric ReLU (PReLU) 或更为流畅的 softplus近似。
 
 论文：深入研究修正器（Rectifiers）：在 ImageNet 分类上超越人类水平的性能（Delving Deep into Rectifiers: Surpassing Human-Level Performance on ImageNet Classification）  
 论文：修正非线性改进神经网络声学模型（Rectifier Nonlinearities Improve Neural Network Acoustic Models ）  
