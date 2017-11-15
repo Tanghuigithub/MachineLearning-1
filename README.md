@@ -2,5 +2,5 @@
 
 可以直接阅读的[Gitbook地址](https://rowl1ng.gitbooks.io/machine-learning/content/)。
 记一些杂七杂八的东西，边学边慢慢整理。
-Learn and record.
+Learn and record and teach.
 

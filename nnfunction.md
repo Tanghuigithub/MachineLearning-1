@@ -34,10 +34,10 @@ Simoid neurons可以说是用连续函数版的二值，通常使用Logistic函�
   $$
   ![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sinh_cosh_tanh.svg/256px-Sinh_cosh_tanh.svg.png)
 
-* the input of the neural net: ${ h }^{ 0 }=x$
-* theoutputofthe k-th hidden layer: ${ h }^{ k }$
+* the input of the neural net: $${ h }^{ 0 }=x$$
+* theoutputofthe k-th hidden layer: $${ h }^{ k }$$
 
-* affine transformation $a = b+Wx$ \, elementwise
+* affine transformation $$a = b+Wx$$ \, elementwise
 
 
   $$
@@ -78,7 +78,7 @@ Softmax 函数通常被用于将原始分数（raw score）的矢量转换成用
   p=softmax(a)\Longleftrightarrow { p }_{ i }=\frac { { e }^{ { a }_{ i } } }{ \sum { _{ j }^{  }{ { e }^{ { a }_{ j } } } }  }
   $$
 
-* consider the gradient with respect to the scores $a$.
+* consider the gradient with respect to the scores $$a$$.
 
   $$
   \frac { ∂ }{ ∂{ a }_{ k } } { L }_{ NLL }(p,y)=\frac { ∂ }{ ∂{ a }_{ k } } (−log{ p }_{ y })=\frac { ∂ }{ ∂{ a }_{ k } } ({ −a }_{ y }+log\sum _{ j }^{  }{ { e }^{ { a }_{ j } } } )\\ ={ −1 }_{ y=k }+\frac { { e }^{ { a }_{ k } } }{ \sum _{ j }^{  }{ { e }^{ { a }_{ j } } }  } ={ p }_{ k }-{1}_{y=k}
@@ -106,7 +106,7 @@ Softmax 函数通常被用于将原始分数（raw score）的矢量转换成用
 
 ### 分类交叉熵损失（Categorical Cross-Entropy Loss）
 
-分类交叉熵损失也被称为负对数似然（negative log likelihood）。这是一种用于解决分类问题的流行的损失函数，可用于测量两种概率分布（通常是真实标签和预测标签）之间的相似性。它可用 L = -sum\(y \* log\(y\_prediction\)\) 表示，其中 y 是真实标签的概率分布（通常是一个one-hot vector），y\_prediction 是预测标签的概率分布，通常来自于一个 softmax。
+分类交叉熵损失也被称为负对数似然（negative log likelihood）。这是一种用于解决分类问题的流行的损失函数，可用于测量两种概率分布（通常是真实标签和预测标签）之间的相似性。它可用 $$L = -\sum(y * \log(y_{prediction}))$$ 表示，其中 y 是真实标签的概率分布（通常是一个one-hot vector），$$y_{prediction} $$是预测标签的概率分布，通常来自于一个 softmax。
 
 ### 负对数似然（NLL：Negative Log Likelihood）
 
@@ -159,7 +159,7 @@ $$
 
 * minimizing this negative log-likelihood is therefore equivalent to minimizing the squared error loss.
 
-* for discrete variables, the binomial negative log-likelihood cost func- tion corresponds to the conditional log-likelihood associated with the Bernoulli distribution \(also known as cross entropy\) with probability $p = {f}\_{θ}\(x\)$ of generating y = 1 given x =$ x$
+* for discrete variables, the binomial negative log-likelihood cost func- tion corresponds to the conditional log-likelihood associated with the Bernoulli distribution \(also known as cross entropy\) with probability $p = {f}\_{θ}\(x\)$ of generating y = 1 given x =$$ x$$
 
 
   $$
