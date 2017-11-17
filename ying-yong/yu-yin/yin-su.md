@@ -59,7 +59,11 @@ The initial step was to run unconstrained phonetic recog- nition on all audio an
 ![roc_result.png-124.4kB][3]
 2017.8.14 中文音素改進：
 ![roc_cn_result.png-123.8kB][4]
-#### CTC的tensorflow实现
+
+### CTC的tensorflow实现
+
+[github项目地址](https://github.com/Rowl1ng/phoneme-ctc)
+
 #### ctc_loss
 ```
 ctc_loss(
@@ -114,6 +118,7 @@ $$
 3. CN音素后验
 
 ### MFCC
+
 使用MFCC特征来计算DTW，根据输出的结果计算的ROC图：
 
 ![roc_out.png-105.9kB][2]
