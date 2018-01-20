@@ -40,6 +40,7 @@
   * [word2vec](word2vec.md)
   * [AlphaGo](alphago.md)
   * [Terms](termsmd.md)
+  * [调参经验](diao-can-jing-yan.md)
 
 ## 应用
 
