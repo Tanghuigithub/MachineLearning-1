@@ -41,6 +41,7 @@
   * [AlphaGo](alphago.md)
   * [Terms](termsmd.md)
   * [调参经验](diao-can-jing-yan.md)
+  * [Transfer Learning](transfer-learning.md)
 
 ## 应用
 
