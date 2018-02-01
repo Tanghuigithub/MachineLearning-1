@@ -35,6 +35,7 @@
   * [caffe](caffe.md)
   * [layer](layer.md)
   * [matlab](matlab.md)
+  * [Pytorch](pytorch.md)
 * [第4章 深度学习探索](deeplearning.md)
   * [Attention](attention.md)
   * [word2vec](word2vec.md)
