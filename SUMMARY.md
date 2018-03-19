@@ -41,6 +41,7 @@
   * [word2vec](word2vec.md)
   * [AlphaGo](alphago.md)
   * [Terms](termsmd.md)
+  * [boost](boost.md)
 
 ## 应用
 
