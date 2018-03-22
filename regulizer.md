@@ -1,8 +1,8 @@
 # 正则化网络
 
-2.给定一个感知器网络$
-f(\mathbf x)=\sum _{i=0}^n w_i \varphi _i(\mathbf w_i ^\mathrm{T}\mathbf x)$，其中$\varphi_i(\cdot)$为Logistic 型激活函数。
-和一个广义正则化网络$f_\lambda(x)=\sum _{i=1}^n w_iG(\mathbf x,\mathbf  x_i)$，其中$G(\mathbf x,\mathbf x_i)$为以数据点$\mathbf x_i$为中心的径向基函数。请: 
+2.给定一个感知器网络$$
+f(\mathbf x)=\sum _{i=0}^n w_i \varphi _i(\mathbf w_i ^\mathrm{T}\mathbf x)$$，其中$$\varphi_i(\cdot)$$为Logistic 型激活函数。
+和一个广义正则化网络$$f_\lambda(x)=\sum _{i=1}^n w_iG(\mathbf x,\mathbf  x_i)$，其中$G(\mathbf x,\mathbf x_i)$为以数据点$\mathbf x_i$为中心的径向基函数。请: 
 (1) 画出该感知器网络和广义正则化网络的结构图; 
 (2) 分析两个模型在不同方面的异同;
 (3) 尝试估计正则化网络的VC维。
