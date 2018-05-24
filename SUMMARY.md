@@ -4,6 +4,8 @@
 
 * [Introduction](README.md)
 * [第-1章 数据分析](7b2c-1-zhang-shu-ju-fen-xi.md)
+  * [scikit-learn](7b2c-1-zhang-shu-ju-fen-xi/scikit-learn.md)
+  * [pandas](7b2c-1-zhang-shu-ju-fen-xi/pandas.md)
 * [第0章 数学准备](chapter1.md)
   * [待整理](inbox0.md)
   * [函数](han_shu.md)
