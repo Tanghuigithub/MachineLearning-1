@@ -47,13 +47,6 @@ jupyter notebook --ip=192.168.8.150 --port=xxxx
 XXX.decode('utf-8')
 ```
 
-
-
-
-# Scipy
-
-## 众数
-
 ## Reference
 
 - [Pandas & Seaborn - A guide to handle & visualize data in Python][2]
