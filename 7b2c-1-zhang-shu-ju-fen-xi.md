@@ -34,7 +34,6 @@ c.NotebookApp.open_browser = False # 禁止自动打开浏览器
 c.NotebookApp.port =8888 #随便指定一个端口
 ```
 
-sha1:6770b9dec97f:a6fe99d12b24f296d2fabf3edfdb55b62484469e
 运行：
 ```
 jupyter notebook --ip=192.168.8.150 --port=xxxx
