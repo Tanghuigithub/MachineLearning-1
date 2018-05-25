@@ -11,7 +11,7 @@ split后，train和test中，都是A:B:C=1:2:3
 将stratify=y就是按照y中的比例分配 
 一般都是=y
 
-```
+```python
 from sklearn.model_selection import train_test_split
 
 pat_train, pat_test, labs_train, labs_test = train_test_split(

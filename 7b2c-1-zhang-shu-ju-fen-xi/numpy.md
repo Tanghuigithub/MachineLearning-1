@@ -11,7 +11,7 @@ aa.index(max(aa))
 
 ## 中位数
 
-```
+```python
 #求数组a的中位数
 np.median(a)
 
@@ -21,8 +21,7 @@ np.percentile(a, [25, 50, 75])
 
 ## 基本矩阵操作 
 
-
-```
+```python
 ## 增加维度：
 x2 = x[:, np.newaxis]
 ## 变形
@@ -39,7 +38,7 @@ a_list = a.ravel().tolist() # 返回list
 ## 找极值+索引
 ### 寻找矩阵中最大的几个元素的index
 
-```
+```python
 def largest_indices(ary, n):
     """Returns the n largest indices from a numpy array."""
     flat = ary.flatten()
