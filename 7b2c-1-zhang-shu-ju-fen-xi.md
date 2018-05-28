@@ -22,9 +22,11 @@ pip install jupyter --user
 jupyter notebook --generate-config
 
 In [1]: from notebook.auth import passwd
-In [2]: passwd() sha1:4ebe51569f06:e2030b8480f6b1f07d920fdbf9851101b5ce45da
+In [2]: passwd() 
 Enter password: 
 Verify password: 
+
+sha1:4ebe51569f06:e2030b8480f6b1f07d920fdbf9851101b5ce45da
 
 vi ~/.jupyter/jupyter_notebook_config.py
 进行如下修改：
@@ -35,10 +37,12 @@ c.NotebookApp.port =8888 #随便指定一个端口
 ```
 
 运行：
+
 ```
 jupyter notebook --ip=192.168.8.150 --port=xxxx
 ```
-[安装多个版本python的kernel][1]
+
+[安装多个版本python的kernel](https://www.jianshu.com/p/e140c5c97938)
 
 编码问题：
 
@@ -49,8 +53,7 @@ XXX.decode('utf-8')
 
 ## Reference
 
-- [Pandas & Seaborn - A guide to handle & visualize data in Python][2]
+* \[Pandas & Seaborn - A guide to handle & visualize data in Python\]\[2\]
 
+\[2\]: [https://tryolabs.com/blog/2017/03/16/pandas-seaborn-a-guide-to-handle-visualize-data-elegantly/](https://tryolabs.com/blog/2017/03/16/pandas-seaborn-a-guide-to-handle-visualize-data-elegantly/)
 
-  [1]: https://www.jianshu.com/p/e140c5c97938
-  [2]: https://tryolabs.com/blog/2017/03/16/pandas-seaborn-a-guide-to-handle-visualize-data-elegantly/
